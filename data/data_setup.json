@@ -1,0 +1,2180 @@
+{
+    "D-1": {
+        "car": {
+            "name": "Kart 125CC Shifter",
+            "description": "Motor 125cc - 2 Tiempos 34HP - Secuencial 6 Vel.",
+            "src": "KartShifter.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Buskerud Largo",
+                "country": "Noruega",
+                "pit_limit": "60 KPH",
+                "participants_max": "23",
+                "grade": "Kart",
+                "turns": "22",
+                "longitude": "1531 Metros",
+                "altitude": "35.188",
+                "src": "Buskerud_Kart_Long.png",
+                "layout_src": "Buskerud_Long.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Vueltas",
+                "participants": "10"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Interlagos Kart Dos",
+                "country": "Noruega",
+                "pit_limit": "60 KPH",
+                "participants_max": "37",
+                "grade": "Kart",
+                "turns": "15",
+                "longitude": "1120 Metros",
+                "altitude": "750.188",
+                "src": "Interlagos_Kart_Two.png",
+                "layout_src": "InterlagosKart2.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "14",
+                "type": "Vueltas",
+                "participants": "10"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Londrina Kart 1",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "27",
+                "grade": "Kart",
+                "turns": "10",
+                "longitude": "1002 Metros",
+                "altitude": "566",
+                "src": "Londrina_Kart_One.png",
+                "layout_src": "LondrinaKart1.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "15",
+                "type": "Vueltas",
+                "participants": "10"
+            }
+        }
+    },
+    "D-2": {
+        "car": {
+            "name": "Formula Inter MG-15",
+            "description": "Motor 2.0L Ford Duratec - 4 Cilindros en linea 161HP - Cambio en H Dogleg 5 Vel.",
+            "src": "F_Inter.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Goiania Corto",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "35",
+                "grade": "Alt",
+                "turns": "7",
+                "longitude": "1910 Metros",
+                "altitude": "757",
+                "src": "Goiania_Short.png",
+                "layout_src": "GoianiaShort.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "15"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Taruma Internacional",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 4",
+                "turns": "9",
+                "longitude": "3016 Metros",
+                "altitude": "71",
+                "src": "Taruma_Internacional.png",
+                "layout_src": "Taruma_Internacional.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "15"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Jacarepagua 2005",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "39",
+                "grade": "Historico",
+                "turns": "13",
+                "longitude": "4905 Metros",
+                "altitude": "30",
+                "src": "Jacarepagua_Historic_2005.png",
+                "layout_src": "Jacarepagua_2005.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "15"
+            }
+        }
+    },
+    "D-3": {
+        "car": {
+            "name": "Volkswagen Fusca",
+            "description": "Motor 1.6L AR LQC - 4 Cilindros en linea 123HP - Cambio en H 4 Vel.",
+            "src": "CopaFusca.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Curitiba Internacional",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Grado 3",
+                "turns": "10",
+                "longitude": "3695 Metros",
+                "altitude": "881",
+                "src": "Curitiba.png",
+                "layout_src": "Curitiba_Internacional.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "6",
+                "type": "Vueltas",
+                "participants": "11"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Goiania",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "35",
+                "grade": "Grado 3",
+                "turns": "13",
+                "longitude": "3820 Metros",
+                "altitude": "757",
+                "src": "Goiania.png",
+                "layout_src": "GoianiaMixed.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "6",
+                "type": "Vueltas",
+                "participants": "11"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Velopark 2017",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "33",
+                "grade": "Grado 3",
+                "turns": "13",
+                "longitude": "2278 Metros",
+                "altitude": "15",
+                "src": "Velopark_2017.png",
+                "layout_src": "Velopark_2017.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Vueltas",
+                "participants": "11"
+            }
+        }
+    },
+    "C-1": {
+        "car": {
+            "name": "Fiat Uno",
+            "description": "Motor 1.6L Type R - 4 Cilindros en linea 131HP - Secuencial 5 Vel.",
+            "src": "CopaUno.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Brasilia Completo",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Alt",
+                "turns": "12",
+                "longitude": "5476 Metros",
+                "altitude": "1172",
+                "src": "Brasilia_Full.png",
+                "layout_src": "Brasilia_Full.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "5",
+                "type": "Vueltas",
+                "participants": "14"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Cascavel",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "37",
+                "grade": "Grado 3",
+                "turns": "7",
+                "longitude": "3302 Metros",
+                "altitude": "750",
+                "src": "Cascavel.png",
+                "layout_src": "Cascavel.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "8",
+                "type": "Vueltas",
+                "participants": "14"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Velopark 2017",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "33",
+                "grade": "Grado 3",
+                "turns": "13",
+                "longitude": "2278 Metros",
+                "altitude": "15",
+                "src": "Velopark_2017.png",
+                "layout_src": "Velopark_2017.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "11",
+                "type": "Vueltas",
+                "participants": "14"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Ibarra Yahuarcocha",
+                "country": "Ecuador",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Grado 4",
+                "turns": "18",
+                "longitude": "4307 Metros",
+                "altitude": "2190",
+                "src": "Autodromo_Yahuacocha.png",
+                "layout_src": "Ibarra.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "11",
+                "type": "Vueltas",
+                "participants": "14"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Jacarepagua 2005",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "39",
+                "grade": "Historic",
+                "turns": "13",
+                "longitude": "4905 Metros",
+                "altitude": "30",
+                "src": "Jacarepagua_Historic_2005.png",
+                "layout_src": "Jacarepagua_2005.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "6",
+                "type": "Vueltas",
+                "participants": "14"
+            }
+        }
+    },
+    "C-2": {
+        "car": {
+            "name": "Formula Vee",
+            "description": "Motor 1.6L EA111 LQC - 4 Cilindros en linea 93HP - Cambio en H 4 Vel.",
+            "src": "F_Vee_Gen1.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Curitiba Externo",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Alt",
+                "turns": "6",
+                "longitude": "2600 Metros",
+                "altitude": "881",
+                "src": "Curitiba_outer.png",
+                "layout_src": "Curitiba_outer.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "14"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Cascavel",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "37",
+                "grade": "Grado 3",
+                "turns": "7",
+                "longitude": "3302 Metros",
+                "altitude": "750",
+                "src": "Cascavel.png",
+                "layout_src": "Cascavel.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "14"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Guapore",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "39",
+                "grade": "Alt",
+                "turns": "7",
+                "longitude": "3080 Metros",
+                "altitude": "474",
+                "src": "Guapore.png",
+                "layout_src": "Guapore.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "14"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Taruma Internacional",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 4",
+                "turns": "9",
+                "longitude": "3016 Metros",
+                "altitude": "71",
+                "src": "Taruma_Internacional.png",
+                "layout_src": "Taruma_Internacional.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "14"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Londrina Largo",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "45",
+                "grade": "Alt",
+                "turns": "10",
+                "longitude": "3140 Metros",
+                "altitude": "566",
+                "src": "Londrina_Long.png",
+                "layout_src": "Londrina_Long.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "14"
+            }
+        }
+    },
+    "C-3": {
+        "car": {
+            "name": "Volkswagen Polo",
+            "description": "Motor 1.0L TC - 3 Cilindros 129HP - Automatico 6 Vel.",
+            "src": "TSICup.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Buenos Aires Circuito No 6",
+                "country": "Argentina",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 1",
+                "turns": "17",
+                "longitude": "4312 Metros",
+                "altitude": "10",
+                "src": "Buenos_Aires_Circuito_No.6.png",
+                "layout_src": "Buenos_Aires_Circuito_6.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "6",
+                "type": "Vueltas",
+                "participants": "14"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Kansai Este",
+                "country": "Japon",
+                "pit_limit": "60 KPH",
+                "participants_max": "51",
+                "grade": "Alt",
+                "turns": "10",
+                "longitude": "2243 Metros",
+                "altitude": "47.188",
+                "src": "Kansai_east.png",
+                "layout_src": "Kansai_east.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "12",
+                "type": "Vueltas",
+                "participants": "14"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Kyalami 2019",
+                "country": "Sudafrica",
+                "pit_limit": "60 KPH",
+                "participants_max": "39",
+                "grade": "Grado 2",
+                "turns": "15",
+                "longitude": "4529 Metros",
+                "altitude": "1532",
+                "src": "Kyalami.png",
+                "layout_src": "Kyalami_2019.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "6",
+                "type": "Vueltas",
+                "participants": "14"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Salvador Street Circuit",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "33",
+                "grade": "Grado 3",
+                "turns": "10",
+                "longitude": "2720 Metros",
+                "altitude": "68",
+                "src": "Salvador_Street_Circuit.png",
+                "layout_src": "Salvador_Street_Circuit.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Vueltas",
+                "participants": "14"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Adelaide",
+                "country": "Australia",
+                "pit_limit": "60 KPH",
+                "participants_max": "38",
+                "grade": "Grado 3",
+                "turns": "14",
+                "longitude": "3219 Metros",
+                "altitude": "52",
+                "src": "Adelaide.png",
+                "layout_src": "Adelaide_Modern.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "8",
+                "type": "Vueltas",
+                "participants": "14"
+            }
+        }
+    },
+    "C-4": {
+        "car": {
+            "name": "Puma P052",
+            "description": "Motor 2.0L 4B11T TC - 4 Cilindros en linea 163HP - Cambio en H 5 Vel.",
+            "src": "GT5.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Bathurst 2020",
+                "country": "Australia",
+                "pit_limit": "60 KPH",
+                "participants_max": "35",
+                "grade": "Grado 3",
+                "turns": "23",
+                "longitude": "6213 Metros",
+                "altitude": "780",
+                "src": "Bathurst_2020.png",
+                "layout_src": "Bathurst_2020.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Cadwell Park",
+                "country": "Inglaterra",
+                "pit_limit": "60 KPH",
+                "participants_max": "25",
+                "grade": "Alt",
+                "turns": "16",
+                "longitude": "3502 Metros",
+                "altitude": "122",
+                "src": "Cadwell_Park.png",
+                "layout_src": "CadwellPark.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Cordoba International",
+                "country": "Argentina",
+                "participants_max": "25",
+                "grade": "Alt",
+                "turns": "7",
+                "longitude": "3653 Metros",
+                "altitude": "586",
+                "src": "Cordoba_TC.png",
+                "layout_src": "Cordoba_International.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Jerez Moto",
+                "country": "España",
+                "pit_limit": "60 KPH",
+                "participants_max": "41",
+                "grade": "Alt",
+                "turns": "13",
+                "longitude": "4423 Metros",
+                "altitude": "38",
+                "src": "Jerez_Moto.png",
+                "layout_src": "Jerez_Standard.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Kansai GP",
+                "country": "Japon",
+                "pit_limit": "60 KPH",
+                "participants_max": "51",
+                "grade": "Grado 1",
+                "turns": "19",
+                "longitude": "5810 Metros",
+                "altitude": "47.188",
+                "src": "Kansai_GP.png",
+                "layout_src": "Kansai_GP.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "10",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        }
+    },
+    "B-1": {
+        "car": {
+            "name": "Mini Cooper JCW",
+            "description": "Motor 2.0L TC - 4 Cilindros en linea 278HP - Secuencial 6 Vel.",
+            "src": "MiniChallenge.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Bathurst 2020",
+                "country": "Australia",
+                "pit_limit": "60 KPH",
+                "participants_max": "35",
+                "grade": "Grado 3",
+                "turns": "23",
+                "longitude": "6213 Metros",
+                "altitude": "780",
+                "src": "Bathurst_2020.png",
+                "layout_src": "Bathurst_2020.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "5",
+                "type": "Vueltas",
+                "participants": "17"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Brands Hatch",
+                "country": "Inglaterra",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 2",
+                "turns": "10",
+                "longitude": "3916 Metros",
+                "altitude": "177.57",
+                "src": "Brands_Hatch.png",
+                "layout_src": "BrandsHatch.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "8",
+                "type": "Vueltas",
+                "participants": "17"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Kansai Este",
+                "country": "Japon",
+                "pit_limit": "60 KPH",
+                "participants_max": "51",
+                "grade": "Alt",
+                "turns": "10",
+                "longitude": "2243 Metros",
+                "altitude": "47.188",
+                "src": "Kansai_east.png",
+                "layout_src": "Kansai_east.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "14",
+                "type": "Vueltas",
+                "participants": "17"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Curvelo Corto",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "37",
+                "grade": "Alt",
+                "turns": "18",
+                "longitude": "3330 Metros",
+                "altitude": "672",
+                "src": "Curvelo_Short.png",
+                "layout_src": "Curvelo_Short.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Vueltas",
+                "participants": "17"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Termas Rio Hondo",
+                "country": "Argentina",
+                "pit_limit": "60 KPH",
+                "participants_max": "33",
+                "grade": "Grado 2",
+                "turns": "14",
+                "longitude": "4806 Metros",
+                "altitude": "280.75",
+                "src": "Termas_de_Rio_Hondo.png",
+                "layout_src": "Termas_Rio_Hondo.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "7",
+                "type": "Vueltas",
+                "participants": "17"
+            }
+        }
+    },
+    "B-2": {
+        "car": {
+            "name": "Formula Trainer Advanced",
+            "description": "Motor 1.6L EA111 LQC - 4 Cilindros en linea 155HP - Secuencial 4 Vel.",
+            "src": "F_Trainer_A.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Interlagos GP",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "45",
+                "grade": "Grado 1",
+                "turns": "15",
+                "longitude": "4295 Metros",
+                "altitude": "750.188",
+                "src": "Interlagos_GP.png",
+                "layout_src": "Interlagos_GP.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "15",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Cascavel",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "37",
+                "grade": "Grado 3",
+                "turns": "7",
+                "longitude": "3302 Metros",
+                "altitude": "750",
+                "src": "Cascavel.png",
+                "layout_src": "Cascavel.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "15",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Taruma Internacional",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 4",
+                "turns": "9",
+                "longitude": "3016 Metros",
+                "altitude": "71",
+                "src": "Taruma_Internacional.png",
+                "layout_src": "Taruma_Internacional.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "15",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Cordoba GP",
+                "country": "Argentina",
+                "pit_limit": "60 KPH",
+                "participants_max": "25",
+                "grade": "Alt",
+                "turns": "13",
+                "longitude": "4060 Metros",
+                "altitude": "586",
+                "src": "Cordoba_No.4.png",
+                "layout_src": "Cordoba_GP.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "15",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Kyalami 1976",
+                "country": "Sudafrica",
+                "pit_limit": "60 KPH",
+                "participants_max": "25",
+                "grade": "Historico",
+                "turns": "9",
+                "longitude": "4048 Metros",
+                "altitude": "1532",
+                "src": "Kyalami_Historic_1976.png",
+                "layout_src": "Kyalami_Historic.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "20",
+                "clasification": "15",
+                "duration": "15",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        }
+    },
+    "B-3": {
+        "car": {
+            "name": "Mitsubishi Lancer RS",
+            "description": "Motor 2.0 L 4B11T Mivec TC - 4 Cilindros en linea 301HP - Secuencial 6 Vel.",
+            "src": "LancerCup.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Curitiba Internacional",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Grado 3",
+                "turns": "10",
+                "longitude": "3695 Metros",
+                "altitude": "881",
+                "src": "Curitiba.png",
+                "layout_src": "Curitiba_Internacional.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "10",
+                "type": "Vueltas",
+                "participants": "17"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Buenos Aires Circuito No 6",
+                "country": "Argentina",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 1",
+                "turns": "17",
+                "longitude": "4312 Metros",
+                "altitude": "10",
+                "src": "Buenos_Aires_Circuito_No.6.png",
+                "layout_src": "Buenos_Aires_Circuito_6.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "8",
+                "type": "Vueltas",
+                "participants": "17"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Snetterton 300",
+                "country": "Inglaterra",
+                "pit_limit": "60 KPH",
+                "participants_max": "25",
+                "grade": "Grado 2",
+                "turns": "12",
+                "longitude": "4780 Metros",
+                "altitude": "43",
+                "src": "Snetterton_300.png",
+                "layout_src": "Snetterton_300.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "7",
+                "type": "Vueltas",
+                "participants": "17"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Cascais",
+                "country": "Portugal",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Grado 1",
+                "turns": "13",
+                "longitude": "4182 Metros",
+                "altitude": "130",
+                "src": "Cascais.png",
+                "layout_src": "Cascais.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "8",
+                "type": "Vueltas",
+                "participants": "17"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Donington Park National",
+                "country": "Inglaterra",
+                "pit_limit": "60 KPH",
+                "participants_max": "37",
+                "grade": "Alt",
+                "turns": "22",
+                "longitude": "3185 Metros",
+                "altitude": "96",
+                "src": "Donington_National.png",
+                "layout_src": "Donington_Nat.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "12",
+                "type": "Vueltas",
+                "participants": "17"
+            }
+        }
+    },
+    "B-4": {
+        "car": {
+            "name": "Ginetta G55 Supercup",
+            "description": "Motor 3.7L - V6 370HP - Secuencial levas 6 Vel.",
+            "src": "G55Supercup.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Cascavel",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "37",
+                "grade": "Grado 3",
+                "turns": "7",
+                "longitude": "3302 Metros",
+                "altitude": "750",
+                "src": "Cascavel.png",
+                "layout_src": "Cascavel.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "18",
+                "type": "Minutos",
+                "participants": "17"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Cadwell Park",
+                "country": "Inglaterra",
+                "pit_limit": "60 KPH",
+                "participants_max": "25",
+                "grade": "Alt",
+                "turns": "16",
+                "longitude": "3502 Metros",
+                "altitude": "122",
+                "src": "Cadwell_Park.png",
+                "layout_src": "CadwellPark.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "18",
+                "type": "Minutos",
+                "participants": "17"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Curitiba Internacional",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Grado 3",
+                "turns": "10",
+                "longitude": "3695 Metros",
+                "altitude": "881",
+                "src": "Curitiba.png",
+                "layout_src": "Curitiba_Internacional.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "18",
+                "type": "Minutos",
+                "participants": "17"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Oulton Park Fosters",
+                "country": "Inglaterra",
+                "pit_limit": "60 KPH",
+                "participants_max": "27",
+                "grade": "Alt",
+                "turns": "9",
+                "longitude": "2662 Metros",
+                "altitude": "65",
+                "src": "Oulton_Park_Fosters.png",
+                "layout_src": "OultonPark_Fosters.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "18",
+                "type": "Minutos",
+                "participants": "17"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Kyalami 2019",
+                "country": "Sudafrica",
+                "pit_limit": "60 KPH",
+                "participants_max": "39",
+                "grade": "Grado 2",
+                "turns": "15",
+                "longitude": "4529 Metros",
+                "altitude": "1532",
+                "src": "Kyalami.png",
+                "layout_src": "Kyalami_2019.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "18",
+                "type": "Minutos",
+                "participants": "17"
+            }
+        }
+    },
+    "A-1": {
+        "car": {
+            "name": "Chevrolet Montana",
+            "description": "Motor 5.7L - V8 369HP - Secuencial 5 Vel.",
+            "src": "CopaMontana.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Curitiba Internacional",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Grado 3",
+                "turns": "10",
+                "longitude": "3695 Metros",
+                "altitude": "881",
+                "src": "Curitiba.png",
+                "layout_src": "Curitiba_Internacional.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "11",
+                "type": "Vueltas",
+                "participants": "25"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Velopark 2010",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "33",
+                "grade": "Alt",
+                "turns": "10",
+                "longitude": "2153 Metros",
+                "altitude": "15",
+                "src": "Velopark_2010.png",
+                "layout_src": "Velopark_2010.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "18",
+                "type": "Vueltas",
+                "participants": "25"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Santa Cruz Do Sul",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "35",
+                "grade": "Grado 4",
+                "turns": "14",
+                "longitude": "3325 Metros",
+                "altitude": "120",
+                "src": "Santa_Cruz_do_Sul.png",
+                "layout_src": "SantaCruzDoSul.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "12",
+                "type": "Vueltas",
+                "participants": "25"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Campo Grande",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "45",
+                "grade": "Grado 3",
+                "turns": "12",
+                "longitude": "3433 Metros",
+                "altitude": "592",
+                "src": "Campo_Grande.png",
+                "layout_src": "CampoGrande.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "12",
+                "type": "Vueltas",
+                "participants": "25"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Londrina Corto",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "45",
+                "grade": "Grado 3",
+                "turns": "22",
+                "longitude": "3020 Metros",
+                "altitude": "566",
+                "src": "Londrina_short.png",
+                "layout_src": "Londrina_short.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "15",
+                "duration": "14",
+                "type": "Vueltas",
+                "participants": "25"
+            }
+        }
+    },
+    "A-2": {
+        "car": {
+            "name": "Dallara F309",
+            "description": "Motor 2.3L - 4 Cilindros en linea 260HP - Secuencial 6 Vel.",
+            "src": "F_3.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Azure",
+                "country": "Monaco",
+                "pit_limit": "60 KPH",
+                "participants_max": "25",
+                "grade": "Grade1",
+                "turns": "19",
+                "longitude": "3337 Metros",
+                "altitude": "1.57",
+                "src": "Azure_Circuit.png",
+                "layout_src": "Azure_Circuit_2021.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "15",
+                "duration": "12",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Cascais",
+                "country": "Portugal",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Grado 1",
+                "turns": "13",
+                "longitude": "4182 Metros",
+                "altitude": "130",
+                "src": "Cascais.png",
+                "layout_src": "Cascais.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Imola",
+                "country": "Italia",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 1",
+                "turns": "19",
+                "longitude": "4909 Metros",
+                "altitude": "47.188",
+                "src": "Imola.png",
+                "layout_src": "Imola_GP.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "15",
+                "duration": "8",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Montreal",
+                "country": "Canada",
+                "pit_limit": "60 KPH",
+                "participants_max": "39",
+                "grade": "Grado 1",
+                "turns": "14",
+                "longitude": "4361 Metros",
+                "altitude": "13",
+                "src": "Montreal.png",
+                "layout_src": "Montreal_Modern.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Spielberg",
+                "country": "Austria",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 1",
+                "turns": "10",
+                "longitude": "4318 Metros",
+                "altitude": "660",
+                "src": "Spielberg.png",
+                "layout_src": "Spielberg_Modern.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        }
+    },
+    "A-3": {
+        "car": {
+            "name": "Chevrolet Cruz SC 2024",
+            "description": "Motor 6.8L MAST LS3 JLR - V8 473HP - Secuencial levas 6 Vel.",
+            "src": "StockCarV8_2024.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Goiania",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "35",
+                "grade": "Grado 3",
+                "turns": "13",
+                "longitude": "3820 Metros",
+                "altitude": "757",
+                "src": "Goiania.png",
+                "layout_src": "GoianiaMixed.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Velo Citta",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "33",
+                "grade": "Grado 3",
+                "turns": "15",
+                "longitude": "3328 Metros",
+                "altitude": "750",
+                "src": "Velo_Citta.png",
+                "layout_src": "VeloCitta1.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "15",
+                "duration": "11",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Interlagos Stock Car",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "45",
+                "grade": "Grado 1",
+                "turns": "15",
+                "longitude": "4295 Metros",
+                "altitude": "750.188",
+                "src": "Interlagos_Stock_Car_Brasil.png",
+                "layout_src": "Interlagos_SCB.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Brasilia Completo",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Alt",
+                "turns": "12",
+                "longitude": "5476 Metros",
+                "altitude": "1172",
+                "src": "Brasilia_Full.png",
+                "layout_src": "Brasilia_Full.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "15",
+                "duration": "8",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Santa Cruz Do Sul",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "35",
+                "grade": "Grado 4",
+                "turns": "14",
+                "longitude": "3325 Metros",
+                "altitude": "120",
+                "src": "Santa_Cruz_do_Sul.png",
+                "layout_src": "SantaCruzDoSul.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "15",
+                "duration": "10",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        }
+    },
+    "A-4": {
+        "car": {
+            "name": "Mercedes-AMG GT4",
+            "description": "Motor 4.0L 2X TC - V8 468HP - Secuencial levas 6 Vel.",
+            "src": "GT4.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Kyalami 2019",
+                "country": "Sudafrica",
+                "pit_limit": "60 KPH",
+                "participants_max": "39",
+                "grade": "Grado 2",
+                "turns": "15",
+                "longitude": "4529 Metros",
+                "altitude": "1532",
+                "src": "Kyalami.png",
+                "layout_src": "Kyalami_2019.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "20",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Donington GP",
+                "country": "Inglaterra",
+                "pit_limit": "60 KPH",
+                "participants_max": "37",
+                "grade": "Grado 2",
+                "turns": "11",
+                "longitude": "4023 Metros",
+                "altitude": "96",
+                "src": "Donington_GP.png",
+                "layout_src": "Donington_GP.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "20",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Kansai GP",
+                "country": "Japon",
+                "pit_limit": "60 KPH",
+                "participants_max": "51",
+                "grade": "Grado 1",
+                "turns": "19",
+                "longitude": "5810 Metros",
+                "altitude": "47.188",
+                "src": "Kansai_GP.png",
+                "layout_src": "Kansai_GP.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "20",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Virginia (VIR) Completo",
+                "country": "Estados unidos",
+                "pit_limit": "60 KPH",
+                "participants_max": "27",
+                "grade": "Grado 2",
+                "turns": "18",
+                "longitude": "5262 Metros",
+                "altitude": "65",
+                "src": "Virginia_International_Raceway_Full.png",
+                "layout_src": "Virginia_International_Raceway_Full.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "20",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Buenos Aires Circuito No 9",
+                "country": "Argentina",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 1",
+                "turns": "11",
+                "longitude": "3335 Metros",
+                "altitude": "10",
+                "src": "Buenos_Aires_Circuito_No.9.png",
+                "layout_src": "Buenos_Aires_Circuito_9.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "20",
+                "type": "Minutos",
+                "participants": "19"
+            }
+        }
+    },
+    "S-1": {
+        "car": {
+            "name": "MetalMoro AJR Chevy",
+            "description": "Motor 6.9L LS3 - V8 594HP - Secuencial levas 6 Vel.",
+            "src": "P1.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Imola",
+                "country": "Italia",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 1",
+                "turns": "19",
+                "longitude": "4909 Metros",
+                "altitude": "47.188",
+                "src": "Imola.png",
+                "layout_src": "Imola_GP.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "25",
+                "type": "Minutos",
+                "participants": "24"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Montreal",
+                "country": "Canada",
+                "pit_limit": "60 KPH",
+                "participants_max": "39",
+                "grade": "Grado 1",
+                "turns": "14",
+                "longitude": "4361 Metros",
+                "altitude": "13",
+                "src": "Montreal.png",
+                "layout_src": "Montreal_Modern.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "25",
+                "type": "Minutos",
+                "participants": "24"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Interlagos GP",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "45",
+                "grade": "Grado 1",
+                "turns": "15",
+                "longitude": "4295 Metros",
+                "altitude": "750.188",
+                "src": "Interlagos_GP.png",
+                "layout_src": "Interlagos_GP.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "25",
+                "type": "Minutos",
+                "participants": "24"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Buenos Aires Circuito No 15",
+                "country": "Argentina",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 1",
+                "turns": "15",
+                "longitude": "5948 Metros",
+                "altitude": "10",
+                "src": "Buenos_Aires_Circuito_No.15.png",
+                "layout_src": "Buenos_Aires_Circuito_15.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "25",
+                "type": "Minutos",
+                "participants": "24"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Donington GP",
+                "country": "Inglaterra",
+                "pit_limit": "60 KPH",
+                "participants_max": "37",
+                "grade": "Grado 2",
+                "turns": "11",
+                "longitude": "4023 Metros",
+                "altitude": "96",
+                "src": "Donington_GP.png",
+                "layout_src": "Donington_GP.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "25",
+                "type": "Minutos",
+                "participants": "24"
+            }
+        }
+    },
+    "S-2": {
+        "car": {
+            "name": "F-Ultimate G2",
+            "description": "Motor 1.6L TC - V6 965HP - Secuencial levas 8 Vel.",
+            "src": "F_Ultimate_Gen2.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Azure",
+                "country": "Monaco",
+                "pit_limit": "60 KPH",
+                "participants_max": "25",
+                "grade": "Grade1",
+                "turns": "19",
+                "longitude": "3337 Metros",
+                "altitude": "1.57",
+                "src": "Azure_Circuit.png",
+                "layout_src": "Azure_Circuit_2021.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "15",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Cascais",
+                "country": "Portugal",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Grado 1",
+                "turns": "13",
+                "longitude": "4182 Metros",
+                "altitude": "130",
+                "src": "Cascais.png",
+                "layout_src": "Cascais.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "15",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Imola",
+                "country": "Italia",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 1",
+                "turns": "19",
+                "longitude": "4909 Metros",
+                "altitude": "47.188",
+                "src": "Imola.png",
+                "layout_src": "Imola_GP.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "15",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Montreal",
+                "country": "Canada",
+                "pit_limit": "60 KPH",
+                "participants_max": "39",
+                "grade": "Grado 1",
+                "turns": "14",
+                "longitude": "4361 Metros",
+                "altitude": "13",
+                "src": "Montreal.png",
+                "layout_src": "Montreal_Modern.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "15",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Spielberg",
+                "country": "Austria",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 1",
+                "turns": "10",
+                "longitude": "4318 Metros",
+                "altitude": "660",
+                "src": "Spielberg.png",
+                "layout_src": "Spielberg_Modern.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "15",
+                "type": "Vueltas",
+                "participants": "19"
+            }
+        }
+    },
+    "S-3": {
+        "car": {
+            "name": "Super V8",
+            "description": "Motor 5.0L - V8 631HP - Secuencial 6 Vel.",
+            "src": "SuperV8.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Adelaide",
+                "country": "Australia",
+                "pit_limit": "60 KPH",
+                "participants_max": "38",
+                "grade": "Grado 3",
+                "turns": "14",
+                "longitude": "3219 Metros",
+                "altitude": "52",
+                "src": "Adelaide.png",
+                "layout_src": "Adelaide_Modern.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "15",
+                "type": "Vueltas",
+                "participants": "24"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Bathurst 2020",
+                "country": "Australia",
+                "pit_limit": "60 KPH",
+                "participants_max": "35",
+                "grade": "Grado 3",
+                "turns": "23",
+                "longitude": "6213 Metros",
+                "altitude": "780",
+                "src": "Bathurst_2020.png",
+                "layout_src": "Bathurst_2020.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "12",
+                "type": "Vueltas",
+                "participants": "24"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Cordoba International",
+                "country": "Argentina",
+                "participants_max": "25",
+                "grade": "Alt",
+                "turns": "7",
+                "longitude": "3653 Metros",
+                "altitude": "586",
+                "src": "Cordoba_TC.png",
+                "layout_src": "Cordoba_International.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "15",
+                "type": "Vueltas",
+                "participants": "24"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Curitiba Internacional",
+                "country": "Brasil",
+                "pit_limit": "60 KPH",
+                "participants_max": "29",
+                "grade": "Grado 3",
+                "turns": "10",
+                "longitude": "3695 Metros",
+                "altitude": "881",
+                "src": "Curitiba.png",
+                "layout_src": "Curitiba_Internacional.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "15",
+                "type": "Vueltas",
+                "participants": "24"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Snetterton 200",
+                "country": "Inglaterra",
+                "pit_limit": "60 KPH",
+                "participants_max": "25",
+                "grade": "Grado 2",
+                "turns": "8",
+                "longitude": "3220 Metros",
+                "altitude": "43",
+                "src": "Snetterton_200.png",
+                "layout_src": "Snetterton_200.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "25",
+                "clasification": "20",
+                "duration": "15",
+                "type": "Vueltas",
+                "participants": "24"
+            }
+        }
+    },
+    "S-4": {
+        "car": {
+            "name": "BMW M6 GT3",
+            "description": "Motor 4.4L 2TC - V8 518HP - Secuencial levas 6 Vel.",
+            "src": "GT3.png"
+        },
+        "1": {
+            "circuit": {
+                "name": "Kansai GP",
+                "country": "Japon",
+                "pit_limit": "60 KPH",
+                "participants_max": "51",
+                "grade": "Grado 1",
+                "turns": "19",
+                "longitude": "5810 Metros",
+                "altitude": "47.188",
+                "src": "Kansai_GP.png",
+                "layout_src": "Kansai_GP.webp"
+            },
+            "set": {
+                "number": "1",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "25",
+                "type": "Minutos",
+                "participants": "29"
+            }
+        },
+        "2": {
+            "circuit": {
+                "name": "Imola",
+                "country": "Italia",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 1",
+                "turns": "19",
+                "longitude": "4909 Metros",
+                "altitude": "47.188",
+                "src": "Imola.png",
+                "layout_src": "Imola_GP.webp"
+            },
+            "set": {
+                "number": "2",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "25",
+                "type": "Minutos",
+                "participants": "29"
+            }
+        },
+        "3": {
+            "circuit": {
+                "name": "Adelaide",
+                "country": "Australia",
+                "pit_limit": "60 KPH",
+                "participants_max": "38",
+                "grade": "Grado 3",
+                "turns": "14",
+                "longitude": "3219 Metros",
+                "altitude": "52",
+                "src": "Adelaide.png",
+                "layout_src": "Adelaide_Modern.webp"
+            },
+            "set": {
+                "number": "3",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "25",
+                "type": "Minutos",
+                "participants": "29"
+            }
+        },
+        "4": {
+            "circuit": {
+                "name": "Spielberg",
+                "country": "Austria",
+                "pit_limit": "60 KPH",
+                "participants_max": "31",
+                "grade": "Grado 1",
+                "turns": "10",
+                "longitude": "4318 Metros",
+                "altitude": "660",
+                "src": "Spielberg.png",
+                "layout_src": "Spielberg_Modern.webp"
+            },
+            "set": {
+                "number": "4",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "25",
+                "type": "Minutos",
+                "participants": "29"
+            }
+        },
+        "5": {
+            "circuit": {
+                "name": "Jerez Chicana",
+                "country": "España",
+                "pit_limit": "60 KPH",
+                "participants_max": "41",
+                "grade": "Grado 1",
+                "turns": "15",
+                "longitude": "4427 Metros",
+                "altitude": "38",
+                "src": "Jerez_Chicane.png",
+                "layout_src": "Jerez_2019.webp"
+            },
+            "set": {
+                "number": "5",
+                "climate": "Soleado",
+                "practice_time": "30",
+                "clasification": "20",
+                "duration": "25",
+                "type": "Minutos",
+                "participants": "29"
+            }
+        }
+    }
+}

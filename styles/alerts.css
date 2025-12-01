@@ -1,0 +1,43 @@
+
+
+.alert {
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 240px;
+    min-height: 60px;
+    z-index: 1000;
+    padding: 0 10px;
+    opacity: 1;
+    animation: close 1s linear 2s 1 normal none;
+}
+
+@keyframes close {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+.alert-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+}
+
+.alert-content p {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.alert-content img {
+    width: 36px;
+    height: 36px;
+}

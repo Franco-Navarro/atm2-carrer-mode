@@ -1,0 +1,159 @@
+
+.setup {
+    display: grid;
+    grid-template-columns: 265px 350px 350px;
+    grid-template-rows: 280px 250px 60px;
+    gap: 16px;
+}
+
+.setup-config {
+    grid-area: 1 / 1 / span 2 / span 1;
+    padding: 16px;
+}
+
+.setup-config h2 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.setup-config p {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.setup-config p:nth-child(2) {
+    margin-bottom: 30px;
+}
+
+.setup-circuit {
+    grid-area: 1 / 2 / span 1 / span 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.setup-circuit-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 16px;
+}
+
+.setup-circuit-img {
+    width: 445px;
+    height: 250px;
+}
+
+.setup-circuit-img img {
+    height: 100%;
+}
+
+.setup-layout {
+    grid-area: 2 / 2 / span 1 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.setup-layout-img img {
+    height: 225px;
+}
+
+.setup-car {
+    grid-area: 2 / 3 / span 1 / span 1;
+    padding: 16px;
+}
+
+.setup-car-img {
+    position: relative;
+    width: 350px;
+    height: 150px;
+}
+
+.setup-car-img img {
+    width: 360px;
+    object-fit: cover;
+    position: absolute;
+    left: 15px;
+}
+
+.setup-car-details {
+    max-width: 310px;
+}
+
+.setup-car-details h3 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.setup-result {
+    grid-area: 3 / 1 / span 1 / span 2;
+    display: flex;
+    gap: 16px;
+    justify-content: start;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.setup-result-input {
+    display: flex;
+    gap: 8px;
+    flex: 1 1 0;
+}
+
+.setup-result-input label {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.setup-result-input input {
+    width: 60px;
+    background-color: var(--background-card);
+    outline: none;
+    border: none;
+    padding: 0 6px;
+    color: var(--color-text);
+    font-size: 26px;
+    text-align: center;
+
+}
+
+.setup-submit {
+    grid-area: 3 / 3 / span 1 / span 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 16px;
+    clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 0% 100%);
+}
+
+.setup-submit-button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    pointer-events: none;
+}
+
+.setup-submit-button label {
+    font-size: 26px;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.setup-info-button {
+    width: 62px;
+    height: 62px;
+    position: absolute;
+    top: 0;
+    right: -78px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.setup-info-button img {
+    width: 42px;
+    height: 42px;
+}

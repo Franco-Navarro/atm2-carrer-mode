@@ -1,0 +1,181 @@
+
+.config {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 300px 300px;
+    gap: 16px;
+    overflow: visible;  
+}
+
+.config-dlc {
+    padding: 16px;
+    grid-area: 1 / 1 / span 2 / span 1;
+}
+
+.config-dlc-title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.config-dlc-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 8px;
+    align-content: stretch;
+    height: 530px;
+}
+
+.config-dlc-list-item {
+    display: block;
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.config-dlc-list-item input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: var(--background-card);
+    transition: background 0.3s ease-in-out;
+}
+
+.config-dlc-list-item:hover input ~ .checkmark {
+    background-color: var(--background-card-hover);
+}
+
+.config-dlc-list-item input:checked ~ .checkmark {
+    background-color: var(--active);    
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.config-dlc-list-item input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.config-dlc-list-item .checkmark:after {
+    left: 6px;
+    top: 1px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.config-user {
+    padding: 16px;
+}
+
+.config-user-form-input {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    justify-content: space-between;
+}
+
+.config-user-form-input label{
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.config-user-form-input input{
+    width: 290px;
+    background-color: var(--background-card);
+    outline: none;
+    border: none;
+    padding: 0 6px;
+    color: var(--color-text);
+    font-size: 26px;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.config-user-form-input input:hover{
+    background-color: var(--background-card-hover);
+}
+
+.config-user-form-input select {
+    width: 290px;
+    background-color: var(--background-card);
+    outline: none;
+    border: none;
+    padding: 0 6px;
+    color: var(--color-text);
+    font-size: 26px;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.config-user-form-input select:hover{
+    background-color: var(--background-card-hover);
+}
+
+.config-user-form-input option {
+    background: var(--background-card); 
+    border: none;
+    color: #232426;
+}
+
+.config-user-form-span {
+    font-size: 16px;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.config-save {
+    display: flex;
+    justify-content: space-between;
+    overflow: visible;
+    position: relative;
+    padding: 8px 0;
+}
+
+.config-save:last-child {
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.config-save-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 26px;
+    font-weight: 500;
+    gap: 16px;
+    height: 50px;
+    width: 240px;
+    color: var(--color-text);
+    overflow: visible;
+    outline: none;
+    border: none;
+    position: relative;
+
+}

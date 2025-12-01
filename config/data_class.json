@@ -1,0 +1,34 @@
+{
+    "class":[
+        {
+            "title": "Iniciacion",
+            "char":"D",
+            "description": "Aqui empieza tu camino Desde lo mas bajo",
+            "car_src": "CopaFusca.png"
+        },
+        {
+            "title": "Aspirante",
+            "char":"C",
+            "description": "Autos de bajo rendimiento Ideales para empezar",
+            "car_src": "CopaUno.png"
+        },
+        {
+            "title": "Intermedia",
+            "char":"B",
+            "description": "Autos mas rapidos aerodinamica Ligera y mayor exigencia",
+            "car_src": "LancerCup.png"
+        },
+        {
+            "title": "Avanzada",
+            "char":"A",
+            "description": "GT y Formulas mas potentes Campeonatos mas largos",
+            "car_src": "GT4.png"
+        },
+        {
+            "title": "Elite",
+            "char":"S",
+            "description": "Prototipos y Formulas De nivel mundial",
+            "car_src": "P1.png"
+        }
+    ]
+}

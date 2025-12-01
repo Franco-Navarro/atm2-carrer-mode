@@ -1,0 +1,126 @@
+{
+    "D": [
+        {
+            "number": "1",
+            "car_name": "Kart 125 Shifter",
+            "description": "3 Carreras contra 10 rivales Usando un Kart GX390",
+            "car_src": "KartShifter.png"
+        },
+        {
+            "number": "2",
+            "car_name": "Formula Inter",
+            "description": "3 Carreras contra 15 rivales Usando un Formula Inter",
+            "car_src": "F_Inter.png"
+        },
+        {
+            "number": "3",
+            "car_name": "Copa Fusca",
+            "description": "3 Carreras contra 15 rivales Usando el clasico Volkswagen Fusca",
+            "car_src": "CopaFusca.png"
+        }
+    ],
+    "C": [
+        {
+            "number": "1",
+            "car_name": "Copa Uno",
+            "description": "5 Carreras contra 14 rivales Usando un Fiat Uno",
+            "car_src": "CopaUno.png"
+        },
+        {
+            "number": "2",
+            "car_name": "Campeonato Formula Vee",
+            "description": "5 Carreras contra 14 rivales Usando un Formula Vee",
+            "car_src": "F_Vee_Gen1.png"
+        },
+        {
+            "number": "3",
+            "car_name": "TSI Cup",
+            "description": "5 Carreras contra 14 rivales Usando un Volkswagen Polo",
+            "car_src": "TSICup.png"
+        },
+        {
+            "number": "4",
+            "car_name": "GT 5",
+            "description": "5 Carreras contra 19 rivales Usando un Puma P052",
+            "car_src": "GT5.png"
+        }
+    ],
+    "B": [
+        {
+            "number": "1",
+            "car_name": "Mini Challenge",
+            "description": "5 Carreras contra 17 rivales Usando un Mini Cooper JCW",
+            "car_src": "MiniChallenge.png"
+        },
+        {
+            "number": "2",
+            "car_name": "Formula Trainer Advance",
+            "description": "5 Carreras contra 19 rivales Usando un Fórmula Ford",
+            "car_src": "F_Trainer_A.png"
+        },
+        {
+            "number": "3",
+            "car_name": "Mitsubishi Lancer Cup",
+            "description": "5 Carreras contra 17 rivales Usando un Mitsubishi Lancer RS",
+            "car_src": "LancerCup.png"
+        },
+        {
+            "number": "4",
+            "car_name": "Ginetta G55 Supercup RS",
+            "description": "5 Carreras contra 17 rivales Usando un Ginetta G55",
+            "car_src": "G55Supercup.png"
+        }
+    ],
+    "A": [
+        {
+            "number": "1",
+            "car_name": "Copa Chevrolet Montana",
+            "description": "5 Carreras contra 25 rivales Usando un Chevrolet Montana",
+            "car_src": "CopaMontana.png"
+        },
+        {
+            "number": "2",
+            "car_name": "Formula 3",
+            "description": "5 Carreras contra 19 rivales Usando un Formula 3",
+            "car_src": "F_3.png"
+        },
+        {
+            "number": "3",
+            "car_name": "Stock Car Brasil",
+            "description": "5 Carreras contra 19 rivales Usnado un Chevrolet Cruz SC 2024",
+            "car_src": "stockCarV8_2024.png"
+        },
+        {
+            "number": "4",
+            "car_name": "GT 4",
+            "description": "5 Carreras contra 19 rivales Usando un Mercedes-AMG GT4",
+            "car_src": "GT4.png"
+        }
+    ],
+    "S": [
+        {
+            "number": "1",
+            "car_name": "Império Endurance P1",
+            "description": "5 Carreras contra 24 rivales Usando un MetalMoro AJR Chevy",
+            "car_src": "P1.png"
+        },
+        {
+            "number": "2",
+            "car_name": "Formula 1",
+            "description": "5 Carreras contra 19 rivales Usando un Formula de Ultima Generacion",
+            "car_src": "F_Ultimate_Gen2.png"
+        },
+        {
+            "number": "3",
+            "car_name": "V8 Supercar Championship",
+            "description": "5 Carreras contra 24 rivales Usando un V8 Supercars",
+            "car_src": "SuperV8.png"
+        },
+        {
+            "number": "4",
+            "car_name": "GT 3",
+            "description": "5 Carreras contra 29 rivales Usando un BMW M6 GT3",
+            "car_src": "GT3.png"
+        }
+    ]
+}

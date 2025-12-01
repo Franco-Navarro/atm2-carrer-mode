@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <title>Modo Carrera</title>
+  <link rel="icon" href="./assets/img/icon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./styles/card.css" />
+  <link rel="stylesheet" href="./styles/config.css" />
+  <link rel="stylesheet" href="./styles/perfil.css" />
+  <link rel="stylesheet" href="./styles/setup.css" />
+  <link rel="stylesheet" href="./styles/alerts.css" />
+  <link rel="stylesheet" href="./styles/popup.css" />
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <link rel="stylesheet" href="./styles/loading.css" />
+</head>
+
+<body class="vw-100 vh-100">
+  <div class="d-none" id="button-wrapper">
+    <button class="button-wrapper button-wrapper-left hover-button" id="wrapper-left">
+      <img src="assets/left-arrow.svg">
+    </button>
+    <button class="button-wrapper button-wrapper-right hover-button" id="wrapper-right">
+      <img src="assets/right-arrow.svg">
+    </button>
+  </div>
+
+  <header class="d-none" id="header">
+    <div class="home d-none" id="home">
+      <div class="bg-card home-button hover-button" id="home-button">
+        <div class="home-button-svg">
+          <img src="assets/home.svg">
+        </div>
+      </div>
+      <div class="bg-card home-return hover-button" id="return-button">
+        <div class="home-return-svg">
+          <img src="assets/log-out.svg">
+        </div>
+        <div class="home-return-title">
+          <h3>Volver</h3>
+        </div>
+      </div>
+    </div>
+    <div class="user" id="user">
+      <div class="bg-card user-button hover-button" id="user-button">
+        <div class="user-button-svg">
+          <img src="assets/helmet.png">
+        </div>
+        <div class="user-button-div"></div>
+        <div class="user-button-name">
+          <h3 id="user-name">Navarro F.</h3>
+          <label id="user-class">Class D</label>
+        </div>
+      </div>
+      <div class="bg-card user-config hover-button" id="config-button">
+        <div class="user-config-svg">
+          <img src="assets/config.svg">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" id="main">
+    <article id="loading-screen">
+      <div class="loading">
+        <img src="assets/loading.svg" alt="">
+      </div>
+    </article>
+
+    <article class="d-none" id="config-screen">
+      <form class="config" id="config-form">
+        <div class="config-dlc bg-card">
+          <h3 class="config-dlc-title">DLCs Activos</h3>
+          <div class="config-dlc-list" id="config-dlc"></div>
+        </div>
+        <div class="config-user bg-card">
+          <div class="config-user-form-input">
+            <label for="config-lastname">Apellido:</label>
+            <input type="text" id="config-lastname" name="lastname">
+          </div>
+          <div class="config-user-form-input">
+            <label for="config-name">Nombre:</label>
+            <input type="text" id="config-name" name="name">
+          </div>
+          <div class="config-user-form-input">
+            <label for="config-countries">Pais:</label>
+            <select id="config-countries" name="country"></select>
+          </div>
+          <div class="config-user-form-input">
+            <label for="config-mode">Modalidad:</label>
+            <select type="text" id="config-mode" name="mode">
+              <option value="Carrera">Carrera</option>
+              <option value="libre">Libre</option>
+            </select>
+          </div>
+          <span class="config-user-form-span">Carrera: Avanzas en las clases a medida que vas ganando las distintas
+            categorias</span>
+          <span class="config-user-form-span">Libre: Todas las clases y categorias debloqueadas desde el comienzo</span>
+        </div>
+        <div class="config-save">
+          <button type="reset" name='reset' class="config-save-button bg-card hover-button">
+            <span>Reiniciar</span>
+            <img src="assets/reset.svg" alt="">
+          </button>
+          <button type="submit" name='submit' class="config-save-button bg-card hover-button">
+            <span>Guardar</span>
+            <img src="assets/save.svg" alt="">
+          </button>
+        </div>
+      </form>
+    </article>
+
+    <article class="perfil d-none" id="user-screen">
+      <div class="perfil-user bg-card">
+        <div class="perfil-user-name">
+          <h4 id="perfil-name">Navarro Franco</h4>
+          <button class="hover-button" id="user-editperfil">
+            <img src="assets/edit.svg" alt="">
+          </button>
+        </div>
+        <div class="perfil-user-country" id="perfil-country">
+
+        </div>
+        <div class="perfil-user-class">
+          <h4 id="perfil-class">Clase D</h4>
+          <button class="hover-button" id="user-resetClass">
+            <img src="assets/revision.svg" alt="">
+          </button>
+        </div>
+        <p id="perfil-wins">Podios: 0</p>
+        <p id="perfil-races">Carreras: 0</p>
+      </div>
+      <div class="perfil-history  bg-card">
+        <table class="perfil-history-table">
+          <thead class="perfil-history-table-thead">
+            <tr>
+              <th>Fecha</th>
+              <th>Circuito</th>
+              <th>Vehiculo</th>
+              <th>Clas</th>
+              <th>Final</th>
+            </tr>
+          </thead>
+          <tbody class="perfil-history-table-tbody" id="perfil-history"></tbody>
+        </table>
+      </div>
+      <div class="perfil-lastrace  bg-card" id="perfil-lastrace"></div>
+    </article>
+
+    <article class="setup d-none" id="setup">
+      <article class="setup-config bg-card" id="setup-config"></article>
+      <article class="setup-circuit bg-card" id="setup-circuit"></article>
+      <article class="setup-layout bg-card" id="setup-layout"></article>
+      <article class="setup-car bg-card" id="setup-car"></article>
+      <article class="setup-result bg-card">
+        <div class="setup-result-input">
+          <label for="">Clasificacion</label>
+          <input type="number" id="result-classification" min="1">
+        </div>
+        <div class="setup-result-input">
+          <label for="">Posicion Final</label>
+          <input type="number" id="result-race" min="1">
+        </div>
+      </article>
+      <article class="setup-submit bg-card hover-button" id="result-save">
+        <div class="setup-submit-button">
+          <label>Guardar Resultados</label>
+          <img src="assets/flag.svg" alt="">
+        </div>
+      </article>
+      <div class="setup-info-button bg-card hover-button" id="setup-info-button">
+        <img src="assets/info.svg" alt="">
+      </div>
+    </article>
+  </main>
+
+  <div class="popup d-none" id="info-setup-popup">
+    <div class="popup-backdrop"></div>
+    <div class="popup-content">
+      <h3 class="popup-content-title">
+        Informacion
+      </h3>
+      <ul class="popup-content-list">
+        <li class="popup-content-detail">
+          Todos los setup de carreras son recomendaciones con el objetivo de un aumento gradual de la dificultad
+        </li>
+        <li class="popup-content-detail">
+          Puedes modificar cualquier parametro de la combinacion para adaptarla a tu gusto asi como el vehiculo (Siempre
+          que sea de la misma categoria)
+        </li>
+        <li class="popup-content-detail">
+          En automobilista 2 la dificultad puede variar segun la combinacion de vehiculos y circuito que se utilice,
+          prueba distintos niveles de dificultad hasta que te sientas comodo
+        </li>
+      </ul>
+
+      <div class="popup-content-buttons">
+        <button class="bg-secondary hover-button" id="info-setup-popupcancel">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup d-none" id="user-resetClass-popup">
+    <div class="popup-backdrop"></div>
+    <div class="popup-content">
+      <h3 class="popup-content-title">
+        Reiniciar Clase
+      </h3>
+      <p class="popup-content-detail">
+        ¿Seguro que quiere reiniciar la clase y los resultados guardados?
+      </p>
+      <div class="popup-content-buttons">
+        <button class="bg-secondary hover-button" id="user-resetClass-popupcancel">Cancelar</button>
+        <button class="bg-danger hover-button" id="user-resetClass-popupreset">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup d-none" id="config-reset-popup">
+    <div class="popup-backdrop"></div>
+    <div class="popup-content">
+      <h3 class="popup-content-title">
+        Reiniciar configuracion
+      </h3>
+      <p class="popup-content-detail">
+        ¿Seguro que quiere reiniciar la configuracion?
+      </p>
+      <div class="popup-content-buttons">
+        <button class="bg-secondary hover-button" id="config-reset-popupcancel">Cancelar</button>
+        <button class="bg-danger hover-button" id="config-reset-popupreset">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup d-none" id="config-save-popup">
+    <div class="popup-backdrop"></div>
+    <div class="popup-content">
+      <h3 class="popup-content-title">
+        Guardar configuracion
+      </h3>
+      <p class="popup-content-detail">
+        ¿Seguro que quiere guardar la configuracion actual?
+      </p>
+      <div class="popup-content-buttons">
+        <button class="bg-secondary hover-button" id="config-save-popupcancel">Cancelar</button>
+        <button class="bg-success hover-button" id="config-save-popupsave">Guardar</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="module" src="./renderer.js"></script>
+
+</html>

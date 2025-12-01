@@ -1,0 +1,159 @@
+
+.perfil {
+    display: grid;
+    grid-template-columns: 330px 700px;
+    grid-template-rows: 270px 270px;
+    gap: 16px;
+    overflow: visible; 
+}
+
+.perfil-user {
+    padding: 16px;
+}
+
+.perfil-user p {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.perfil-user-name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.perfil-user-name h4 {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.perfil-user-name button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.perfil-user-country {
+    display: flex;
+}
+
+.perfil-user-country h5 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.perfil-user-country img {
+    width: 40px;
+    margin-right: 20px;
+}
+
+.perfil-user-class {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.perfil-user-class h4 {
+    font-size: 28px;
+    font-weight: 500;
+
+}
+
+.perfil-user-class button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.perfil-history{
+    padding: 16px;
+    max-height: 300px;
+    overflow: auto;
+    position: relative;
+}
+
+.perfil-history-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.perfil-history-table-thead {
+    border-bottom: 2px solid var(--color-text);
+}
+
+.perfil-history-table-thead tr th:nth-last-child(-n + 2){
+    text-align: center;
+}
+
+.perfil-history-table-thead th {
+    text-align: start;
+    padding: 3px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.perfil-history-table-tbody tr td:nth-last-child(-n + 2){
+    text-align: center;
+}
+
+.perfil-history-table-tbody td{
+    text-align: start;
+    padding: 6px 3px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.perfil-lastrace {
+    grid-area: 2 / 1 / 1 span / span 2;
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+}
+
+.perfil-lastrace-pos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.perfil-lastrace-pos h4{
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.perfil-lastrace-pos p{
+    font-size: 20px;
+}
+
+.perfil-lastrace-circuit {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+.perfil-lastrace-circuit h5{
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.perfil-lastrace-circuit img{
+    max-height: 160px;
+}
+
+.perfil-lastrace-car {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+.perfil-lastrace-car h5{
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.perfil-lastrace-car img{
+    max-height: 160px;
+}

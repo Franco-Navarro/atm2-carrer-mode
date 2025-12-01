@@ -1,0 +1,135 @@
+
+.card {
+    display: grid;
+    grid-template-rows: 140px 192px 130px;
+    width: 290px;
+    max-width: 290px;
+    min-width: 290px;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.card:not(.disabled) {
+    cursor: pointer;
+}
+
+.card:hover:not(.disabled){
+    transform: matrix(1.04, 0, 0, 1.04, 0, -20);
+}
+
+.card-label {
+    width: 100px;
+    height: 28px;
+    top: 12px;
+    position: absolute;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-class {
+    left: -25px;
+    transform: rotate(-45deg);
+}
+
+.result-class>.result-class-img {
+    display: block;
+    transform: rotate(45deg);
+}
+
+.result-class>.result-category-img {
+    display: none;
+}
+
+.result-category {
+    right: -25px;
+}
+
+.result-category>.result-class-img {
+    display: none;
+}
+
+.result-category>.result-category-img {
+    display: block;
+    transform: rotate(-45deg);
+}
+
+.result-race {
+    right: -25px;
+}
+
+.result-race>.result-class-img {
+    display: none;
+}
+
+.result-race>.result-category-img {
+    display: none;
+}
+
+.card-title {
+    display: flex;
+    justify-content: end;
+}
+
+.card-title-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+}
+
+.card-title-text h3 {
+    font-size: 96px;
+}
+
+.card-title-text label {
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    top: -14px;
+}
+
+.card-car {
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-car-img {
+    position: relative;
+    height: 100%;
+}
+
+.card-car-img img {
+    position: absolute;
+    right: -25%;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+}
+
+.card-info h2 {
+    font-size: 28px;
+    font-weight: semibold;
+}
+
+.card-info label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card-layout-img img {
+    height: 192px;
+    padding: 0 10px;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "atm2-carrer-mode",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type":"commonjs",
+  "devDependencies": {
+    "electron": "^37.2.4"
+  },
+  "dependencies": {
+    "electron-settings": "^4.0.4",
+    "electron-store": "^10.1.0"
+  }
+}

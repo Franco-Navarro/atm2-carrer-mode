@@ -1,0 +1,34 @@
+{
+    "class": [
+        {
+            "title": "Iniciación",
+            "char": "D",
+            "description": "Vehículos ideales para aprender las técnicas de manejo y dar los primeros pasos en la competición",
+            "car_src": "CopaFusca.png"
+        },
+        {
+            "title": "Amateur",
+            "char": "C",
+            "description": "Vehículos más rápidos y exigentes. Con rivales más fuertes y trazados técnicos",
+            "car_src": "CopaUno.png"
+        },
+        {
+            "title": "Profesional",
+            "char": "B",
+            "description": "Vehículos equilibrados y potentes. La competición se intensifica y cada error puede costar la victoria",
+            "car_src": "LancerCup.png"
+        },
+        {
+            "title": "Élite",
+            "char": "A",
+            "description": "Vehículos de alto rendimiento. Solo los pilotos con gran habilidad logran dominar estas categorías",
+            "car_src": "GT4.png"
+        },
+        {
+            "title": "Leyenda",
+            "char": "S",
+            "description": "La cima del automovilismo. Superautos y prototipos extremos que llevan la conducción al límite",
+            "car_src": "P1.png"
+        }
+    ]
+}
