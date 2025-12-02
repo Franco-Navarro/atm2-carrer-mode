@@ -39,9 +39,9 @@ const loadData = async () => {
 
 const initUI = () => {
     renderClasses();
-    populateUserUI();
-    populateConfigUI();
-    populateHistoryUI();
+    setUserUI();
+    setConfigUI();
+    setHistoryUI();
     setupEventListeners();
 };
 
@@ -86,7 +86,7 @@ const renderClasses = () => {
     }, 1000);
 };
 
-const populateUserUI = () => {
+const setUserUI = () => {
     const fullName = `${appData.user.name} ${appData.user.lastname || ''}`; // lastname might not be in json yet
     $('#user-name').textContent = appData.user.name; // Header
     $('#user-class').textContent = `Class ${appData.user.class}`; // Header
@@ -102,7 +102,7 @@ const populateUserUI = () => {
     }
 };
 
-const populateConfigUI = () => {
+const setConfigUI = () => {
     $('#config-name').value = appData.user.name || '';
     $('#config-lastname').value = appData.user.lastname || '';
 
@@ -120,7 +120,7 @@ const populateConfigUI = () => {
     $('#config-mode').value = appData.user.mode || 'Carrera';
 };
 
-const populateHistoryUI = () => {
+const setHistoryUI = () => {
     const tbody = $('#perfil-history');
     tbody.innerHTML = '';
     // Sort history by date desc?
@@ -155,7 +155,7 @@ const setupEventListeners = () => {
 
         const result = await window.dataManager.save('data_user.json', appData.user);
         if (result.success) {
-            populateUserUI();
+            setUserUI();
             alert('Configuracion guardada!');
         } else {
             alert('Error al guardar configuracion');
@@ -195,8 +195,8 @@ const setupEventListeners = () => {
         const historySave = await window.dataManager.save('data_history.json', appData.history);
 
         if (userSave.success && historySave.success) {
-            populateUserUI();
-            populateHistoryUI();
+            setUserUI();
+            setHistoryUI();
             alert('Resultados guardados!');
             showScreen('home');
         } else {
@@ -216,8 +216,8 @@ const setupEventListeners = () => {
         appData.history = [];
         await window.dataManager.save('data_user.json', appData.user);
         await window.dataManager.save('data_history.json', appData.history);
-        populateUserUI();
-        populateHistoryUI();
+        setUserUI();
+        setHistoryUI();
         $('#user-resetClass-popup').classList.add('d-none');
     });
 
@@ -266,7 +266,7 @@ function openSetup(char, category_number, race) {
     $(`#race-${char}-${category_number}`).classList.add("d-none");
     $('#setup').classList.remove('d-none');
 
-    // Populate Setup Screen
+    // set Setup Screen
     const setupData = appData.setup[`${char}-${category_number}`];
     const raceSetup = setupData[race.number];
 
@@ -275,7 +275,7 @@ function openSetup(char, category_number, race) {
         carName: setupData.car.name
     };
 
-    // Populate UI elements for setup (simplified)
+    // set UI elements for setup (simplified)
     const setupConfig = $('#setup-config');
     setupConfig.innerHTML = `
         <h3>Configuracion</h3>
