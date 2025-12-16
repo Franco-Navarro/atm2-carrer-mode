@@ -1,17 +1,16 @@
-
 .setup {
     display: grid;
-    grid-template-columns: 265px 350px 350px;
-    grid-template-rows: 280px 250px 60px;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: 280px 280px 60px;
     gap: 16px;
 }
 
 .setup-config {
-    grid-area: 1 / 1 / span 2 / span 1;
+    grid-area: 1 / 1 / 1 / 1;
     padding: 16px;
 }
 
-.setup-config h2 {
+.setup-config h3 {
     font-size: 32px;
     font-weight: 600;
 }
@@ -33,13 +32,6 @@
     padding: 16px;
 }
 
-.setup-circuit-details {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-size: 16px;
-}
-
 .setup-circuit-img {
     width: 445px;
     height: 250px;
@@ -47,6 +39,22 @@
 
 .setup-circuit-img img {
     height: 100%;
+}
+
+.setup-params {
+    grid-area: 2 / 1 / span 1 / span 1;
+    padding: 16px;
+}
+
+.setup-params h3 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.setup-params p {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px;
 }
 
 .setup-layout {

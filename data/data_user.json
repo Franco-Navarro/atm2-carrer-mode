@@ -1,7 +1,10 @@
 {
-    "name":"Franco",
-    "number":"21",
-    "wins":"0",
-    "races":"0",
-    "class":"D"
+  "name": "Franco",
+  "number": "21",
+  "wins": "5",
+  "races": "5",
+  "class": "D",
+  "lastname": "Navarro",
+  "country": "AR",
+  "mode": "Carrera"
 }

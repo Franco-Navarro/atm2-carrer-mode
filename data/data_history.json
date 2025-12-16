@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "date": "16/12/2025",
+    "circuit": "Buskerud Largo",
+    "vehicle": "Kart 125CC Shifter",
+    "classification": "1",
+    "position": "2"
+  },
+  {
+    "date": "16/12/2025",
+    "circuit": "Buskerud Largo",
+    "vehicle": "Kart 125CC Shifter",
+    "classification": "1",
+    "position": "1"
+  },
+  {
+    "date": "16/12/2025",
+    "circuit": "Buskerud Largo",
+    "vehicle": "Kart 125CC Shifter",
+    "classification": "1",
+    "position": "1"
+  },
+  {
+    "date": "16/12/2025",
+    "circuit": "Buskerud Largo",
+    "vehicle": "Kart 125CC Shifter",
+    "classification": "1",
+    "position": "1"
+  },
+  {
+    "date": "16/12/2025",
+    "circuit": "Cascavel",
+    "vehicle": "Formula Vee",
+    "classification": "1",
+    "position": "2"
+  }
+]

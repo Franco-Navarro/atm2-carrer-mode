@@ -14,7 +14,8 @@ let appData = {
     setup: {},
     user: {},
     countries: {},
-    history: []
+    history: [],
+    lastResult: {}
 };
 
 let currentSetup = null;
@@ -23,13 +24,13 @@ const loadData = async () => {
     try {
         const classData = await window.dataManager.load("data_class.json");
         appData.class = classData.class;
-
         appData.category = await window.dataManager.load("data_category.json");
         appData.races = await window.dataManager.load("data_races.json");
         appData.setup = await window.dataManager.load("data_setup.json");
         appData.user = await window.dataManager.load("data_user.json");
         appData.countries = await window.dataManager.load("data_country.json");
         appData.history = await window.dataManager.load("data_history.json") || [];
+        appData.lastResult = await window.dataManager.load("data_lastResult.json") || {};
 
         initUI();
     } catch (error) {
@@ -43,6 +44,7 @@ const initUI = () => {
     setConfigUI();
     setHistoryUI();
     setupEventListeners();
+    appData.user.name ? showScreen('home') : showScreen('config-screen');
 };
 
 const renderClasses = () => {
@@ -190,15 +192,23 @@ const setupEventListeners = () => {
         };
         appData.history.push(newEntry);
 
+        // Add to Last Result
+        let id = `${currentSetup.char}-${currentSetup.category_number}-${currentSetup.race.number}`;
+        let lastResult = {
+            classification: classification,
+            position: position
+        };
+        appData.lastResult[id] = lastResult;
+
         // Save Files
         const userSave = await window.dataManager.save('data_user.json', appData.user);
         const historySave = await window.dataManager.save('data_history.json', appData.history);
+        const lastResultSave = await window.dataManager.save('data_lastResult.json', appData.lastResult);
 
-        if (userSave.success && historySave.success) {
+        if (userSave.success && historySave.success && lastResultSave.success) {
             setUserUI();
             setHistoryUI();
             alert('Resultados guardados!');
-            showScreen('home');
         } else {
             alert('Error al guardar resultados');
         }
@@ -206,7 +216,6 @@ const setupEventListeners = () => {
 
     // Extra UI Interactions
     $('#user-editperfil').addEventListener('click', () => showScreen('config-screen'));
-
     $('#user-resetClass').addEventListener('click', () => $('#user-resetClass-popup').classList.remove('d-none'));
     $('#user-resetClass-popupcancel').addEventListener('click', () => $('#user-resetClass-popup').classList.add('d-none'));
     $('#user-resetClass-popupreset').addEventListener('click', async () => {
@@ -220,7 +229,6 @@ const setupEventListeners = () => {
         setHistoryUI();
         $('#user-resetClass-popup').classList.add('d-none');
     });
-
     $('#setup-info-button').addEventListener('click', () => $('#info-setup-popup').classList.remove('d-none'));
     $('#info-setup-popupcancel').addEventListener('click', () => $('#info-setup-popup').classList.add('d-none'));
 };
@@ -236,25 +244,21 @@ const showScreen = (screenId) => {
     if (screenId === 'home') {
         $('#class').classList.remove('d-none');
         $('#header').classList.remove('d-none');
-        $('#home').classList.add('d-none'); // Home button hidden on home screen?
+        $('#home').classList.add('d-none');
     } else {
         $(`#${screenId}`).classList.remove('d-none');
-        if (screenId === 'setup') {
-            // Setup logic handled in openSetup
-        }
+        $('#home').classList.remove('d-none');
     }
 };
 
 const goBack = () => {
-    // Simple go back to home for now
     showScreen('home');
 };
 
-// Exposed functions for card clicks
 function openCategory(char) {
     $(`#class`).classList.add("d-none");
     $(`#category-${char}`).classList.remove("d-none");
-    $('#home').classList.remove('d-none'); // Show return button
+    $('#home').classList.remove('d-none');
 }
 
 function openRace(char, category_number) {
@@ -265,36 +269,72 @@ function openRace(char, category_number) {
 function openSetup(char, category_number, race) {
     $(`#race-${char}-${category_number}`).classList.add("d-none");
     $('#setup').classList.remove('d-none');
-
+    let id = `${char}-${category_number}-${race.number}`;
     // set Setup Screen
+    const result = appData.lastResult && appData.lastResult[id] ? appData.lastResult[id] : null;
     const setupData = appData.setup[`${char}-${category_number}`];
     const raceSetup = setupData[race.number];
-
     currentSetup = {
+        char: char,
+        category_number: category_number,
+        race: race,
         circuitName: race.circuit_name,
         carName: setupData.car.name
     };
 
-    // set UI elements for setup (simplified)
+    // set UI elements for setup
     const setupConfig = $('#setup-config');
     setupConfig.innerHTML = `
-        <h3>Configuracion</h3>
-        <p>Clima: ${raceSetup.set.climate}</p>
-        <p>Duracion: ${raceSetup.set.duration} ${raceSetup.set.type}</p>
+        <h3>${raceSetup.circuit.name}</h3>
+        <p>Carrera: ${raceSetup.set.number}</p>
+        <p>Pais: ${raceSetup.circuit.country}</p>
+        <p>Curvas: ${raceSetup.circuit.turns}</p>
+        <p>Longitud: ${raceSetup.circuit.longitude}</p>
     `;
 
     const setupCircuit = $('#setup-circuit');
     setupCircuit.innerHTML = `
-        <h3>Circuito</h3>
-        <p>${race.circuit_name}</p>
-        <p>${race.circuit_country}</p>
+        <div class="setup-circuit-img">
+            <img src="assets/tracks/${raceSetup.circuit.src}">
+        </div>
+    `;
+
+    const setupParams = $('#setup-params');
+    setupParams.innerHTML = `
+        <h3>Parametros</h3>
+        <p>Clima: ${raceSetup.set.climate}</p>
+        <p>Practica: ${raceSetup.set.practice_time}</p>
+        <p>Clasificacion: ${raceSetup.set.clasification}</p>
+        <p>Carrera: ${raceSetup.set.duration} ${raceSetup.set.type}</p>
+        <p>Participantes: ${raceSetup.set.participants}</p>
+    `;
+
+    const setupLayout = $('#setup-layout');
+    setupLayout.innerHTML = `
+        <div class="setup-layout-img">
+            <img src="assets/layout/${raceSetup.circuit.layout_src}">
+        </div>
     `;
 
     const setupCar = $('#setup-car');
     setupCar.innerHTML = `
-        <h3>Vehiculo</h3>
-        <p>${setupData.car.name}</p>
+    <div class="setup-car-img">
+        <img src="assets/cars/${setupData.car.src}">
+    </div>
+    <div class="setup-car-details">
+        <h3>${setupData.car.name}</h3>
+        <p>${setupData.car.description}</p>
+    </div>
     `;
+
+    if (result) {
+        $('#result-classification').value = result.classification;
+        $('#result-race').value = result.position;
+    }
+    else {
+        $('#result-classification').value = '';
+        $('#result-race').value = '';
+    }
 }
 
 loadData();
