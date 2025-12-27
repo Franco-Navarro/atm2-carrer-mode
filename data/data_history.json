@@ -33,5 +33,33 @@
     "vehicle": "Formula Vee",
     "classification": "1",
     "position": "2"
+  },
+  {
+    "date": "27/12/2025",
+    "circuit": "Interlagos Kart Dos",
+    "vehicle": "Kart 125CC Shifter",
+    "classification": "2",
+    "position": "3"
+  },
+  {
+    "date": "27/12/2025",
+    "circuit": "Interlagos Kart Dos",
+    "vehicle": "Kart 125CC Shifter",
+    "classification": "3",
+    "position": "2"
+  },
+  {
+    "date": "27/12/2025",
+    "circuit": "Interlagos Kart Dos",
+    "vehicle": "Kart 125CC Shifter",
+    "classification": "3",
+    "position": "1"
+  },
+  {
+    "date": "27/12/2025",
+    "circuit": "Interlagos Kart Dos",
+    "vehicle": "Kart 125CC Shifter",
+    "classification": "3",
+    "position": "2"
   }
 ]

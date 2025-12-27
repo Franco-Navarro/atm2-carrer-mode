@@ -6,7 +6,6 @@ import { createCardRace } from "./components/card_race.js";
 const $ = selector => document.querySelector(selector);
 const main = $('#main');
 
-// State
 let appData = {
     class: [],
     category: {},
@@ -19,6 +18,8 @@ let appData = {
 };
 
 let currentSetup = null;
+let currentScreen = null;
+let navigationHistory = [];
 
 const loadData = async () => {
     try {
@@ -30,7 +31,6 @@ const loadData = async () => {
         appData.user = await window.dataManager.load("data_user.json");
         appData.countries = await window.dataManager.load("data_country.json");
         appData.history = await window.dataManager.load("data_history.json") || [];
-        appData.lastResult = await window.dataManager.load("data_lastResult.json") || {};
 
         initUI();
     } catch (error) {
@@ -192,20 +192,18 @@ const setupEventListeners = () => {
         };
         appData.history.push(newEntry);
 
-        // Add to Last Result
-        let id = `${currentSetup.char}-${currentSetup.category_number}-${currentSetup.race.number}`;
-        let lastResult = {
-            classification: classification,
-            position: position
-        };
-        appData.lastResult[id] = lastResult;
+        // Add Last Result
+        let id = `${currentSetup.char}-${currentSetup.category_number}`;
+        let number = currentSetup.race.number - 1;
+        appData.races[id][number].classification = classification;
+        appData.races[id][number].position = position;
 
         // Save Files
         const userSave = await window.dataManager.save('data_user.json', appData.user);
         const historySave = await window.dataManager.save('data_history.json', appData.history);
-        const lastResultSave = await window.dataManager.save('data_lastResult.json', appData.lastResult);
+        const racesSave = await window.dataManager.save('data_races.json', appData.races);
 
-        if (userSave.success && historySave.success && lastResultSave.success) {
+        if (userSave.success && historySave.success && racesSave.success) {
             setUserUI();
             setHistoryUI();
             alert('Resultados guardados!');
@@ -235,10 +233,15 @@ const setupEventListeners = () => {
 
 // Navigation Logic
 const showScreen = (screenId) => {
-    // Hide all screens
-    ['config-screen', 'user-screen', 'setup'].forEach(id => $(`#${id}`).classList.add('d-none'));
+    if (screenId === 'home') {
+        navigationHistory = [];
+    } else if (currentScreen && currentScreen !== `#${screenId}`) {
+        navigationHistory.push(currentScreen);
+    }
 
-    // Hide all card containers
+    currentScreen = `#${screenId}`;
+
+    ['config-screen', 'user-screen', 'setup'].forEach(id => $(`#${id}`).classList.add('d-none'));
     document.querySelectorAll('.card-container').forEach(el => el.classList.add('d-none'));
 
     if (screenId === 'home') {
@@ -249,29 +252,60 @@ const showScreen = (screenId) => {
         $(`#${screenId}`).classList.remove('d-none');
         $('#home').classList.remove('d-none');
     }
+
+
 };
 
 const goBack = () => {
-    showScreen('home');
+    if (navigationHistory.length === 0) {
+        showScreen('home');
+        return;
+    }
+
+    if (currentScreen === '#home') {
+        $('#class').classList.add('d-none');
+        $('#header').classList.add('d-none');
+    } else {
+        const el = $(currentScreen);
+        if (el) el.classList.add('d-none');
+    }
+
+    const prevScreen = navigationHistory.pop();
+    currentScreen = prevScreen;
+
+    if (prevScreen === '#home') {
+        $('#class').classList.remove('d-none');
+        $('#header').classList.remove('d-none');
+        $('#home').classList.add('d-none');
+    } else {
+        const el = $(prevScreen);
+        if (el) el.classList.remove('d-none');
+        $('#home').classList.remove('d-none');
+    }
 };
 
 function openCategory(char) {
+    if (currentScreen) navigationHistory.push(currentScreen);
+    currentScreen = `#category-${char}`;
     $(`#class`).classList.add("d-none");
     $(`#category-${char}`).classList.remove("d-none");
     $('#home').classList.remove('d-none');
 }
 
 function openRace(char, category_number) {
+    if (currentScreen) navigationHistory.push(currentScreen);
+    currentScreen = `#race-${char}-${category_number}`;
     $(`#category-${char}`).classList.add("d-none");
     $(`#race-${char}-${category_number}`).classList.remove("d-none");
 }
 
 function openSetup(char, category_number, race) {
+    if (currentScreen) navigationHistory.push(currentScreen);
+    currentScreen = `#setup`;
     $(`#race-${char}-${category_number}`).classList.add("d-none");
     $('#setup').classList.remove('d-none');
     let id = `${char}-${category_number}-${race.number}`;
     // set Setup Screen
-    const result = appData.lastResult && appData.lastResult[id] ? appData.lastResult[id] : null;
     const setupData = appData.setup[`${char}-${category_number}`];
     const raceSetup = setupData[race.number];
     currentSetup = {
@@ -327,9 +361,9 @@ function openSetup(char, category_number, race) {
     </div>
     `;
 
-    if (result) {
-        $('#result-classification').value = result.classification;
-        $('#result-race').value = result.position;
+    if (race.classification && race.position) {
+        $('#result-classification').value = race.classification;
+        $('#result-race').value = race.position;
     }
     else {
         $('#result-classification').value = '';
@@ -338,3 +372,7 @@ function openSetup(char, category_number, race) {
 }
 
 loadData();
+
+// QUE LAS TARJETAS SEAN UN CARRUSEL SIEMPRE
+// CUANDO SE ACTUALIZA EL RESULTADO ACTUALIZAR LA TARJETA DE CARRERA
+// 

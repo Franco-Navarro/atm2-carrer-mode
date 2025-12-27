@@ -1,8 +1,9 @@
 .setup {
     display: grid;
-    grid-template-columns: repeat(3, 350px);
+    grid-template-columns: repeat(3, 330px);
     grid-template-rows: 280px 280px 60px;
     gap: 16px;
+    position: relative;
 }
 
 .setup-config {
@@ -28,8 +29,9 @@
 .setup-circuit {
     grid-area: 1 / 2 / span 1 / span 2;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 16px;
+    align-items: center;
 }
 
 .setup-circuit-img {
@@ -83,7 +85,7 @@
     width: 360px;
     object-fit: cover;
     position: absolute;
-    left: 15px;
+    left: -15px;
 }
 
 .setup-car-details {
@@ -151,11 +153,12 @@
 }
 
 .setup-info-button {
+    background-color: var(--background-card);
     width: 62px;
     height: 62px;
     position: absolute;
-    top: 0;
-    right: -78px;
+    top: 16px;
+    right: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
