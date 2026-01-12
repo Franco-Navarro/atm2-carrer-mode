@@ -41,3 +41,25 @@ export function createCardRace(char, category, race) {
                     </div>  `;
     return div;
 }
+
+
+export function setLabelRace(race, position) {
+    let band = race.querySelector('.card-label');
+    if (position && position >= 1) {
+        band.innerHTML = position;
+        switch (position) {
+            case "1":
+                band.classList = `card-label result-race bg-gold`;
+                break;
+            case "2":
+                band.classList = `card-label result-race bg-silver`;
+                break;
+            case "3":
+                band.classList = `card-label result-race bg-bronce`;
+                break;
+            default:
+                band.classList = `card-label result-race bg-secondary`;
+                break;
+        }
+    }
+}
