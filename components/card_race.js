@@ -1,17 +1,23 @@
 export function createCardRace(char, category, race) {
     let band = '';
-    if (race.position && race.position >= 1 && race.position <= 3) {
+    if (race.position && race.position >= 1) {
         switch (race.position) {
             case "1":
-                band = `<div class="card-label result-race bg-gold"></div>`;
+                band = `<div class="card-label result-race bg-gold">${race.position}</div>`;
                 break;
             case "2":
-                band = `<div class="card-label result-race bg-silver"></div>`;
+                band = `<div class="card-label result-race bg-silver">${race.position}</div>`;
                 break;
             case "3":
-                band = `<div class="card-label result-race bg-bronce"></div>`;
+                band = `<div class="card-label result-race bg-bronce">${race.position}</div>`;
+                break;
+            default:
+                band = `<div class="card-label result-race bg-secondary">${race.position}</div>`;
                 break;
         }
+    }
+    else {
+        band = `<div class="card-label result-race"></div>`;
     }
     const div = document.createElement("div");
     div.classList = "bg-card card";

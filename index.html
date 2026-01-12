@@ -20,15 +20,6 @@
 </head>
 
 <body class="vw-100 vh-100">
-  <div class="d-none" id="button-wrapper">
-    <button class="button-wrapper button-wrapper-left hover-button" id="wrapper-left">
-      <img src="assets/img/left-arrow.svg">
-    </button>
-    <button class="button-wrapper button-wrapper-right hover-button" id="wrapper-right">
-      <img src="assets/img/right-arrow.svg">
-    </button>
-  </div>
-
   <header class="d-none" id="header">
     <div class="home d-none" id="home">
       <div class="bg-card home-button hover-button" id="home-button">
@@ -64,6 +55,9 @@
     </div>
   </header>
 
+  <button class="button-wrapper hover-button" id="button-wrapper-left">
+    <img src="assets/img/left-arrow.svg">
+  </button>
   <main class="main" id="main">
     <article id="loading-screen">
       <div class="loading">
@@ -178,6 +172,9 @@
       </div>
     </article>
   </main>
+  <button class="hover-button button-wrapper" id="button-wrapper-right">
+    <img src="assets/img/right-arrow.svg">
+  </button>
 
   <div class="popup d-none" id="info-setup-popup">
     <div class="popup-backdrop"></div>
@@ -249,6 +246,22 @@
       <div class="popup-content-buttons">
         <button class="bg-secondary hover-button" id="config-save-popupcancel">Cancelar</button>
         <button class="bg-success hover-button" id="config-save-popupsave">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup d-none" id="result-save-popup">
+    <div class="popup-backdrop"></div>
+    <div class="popup-content">
+      <h3 class="popup-content-title">
+        Guardar resultados
+      </h3>
+      <p class="popup-content-detail">
+        ¿Seguro que quiere guardar los resultados actuales?
+      </p>
+      <div class="popup-content-buttons">
+        <button class="bg-secondary hover-button" id="result-save-popupcancel">Cancelar</button>
+        <button class="bg-success hover-button" id="result-save-popupsave">Guardar</button>
       </div>
     </div>
   </div>

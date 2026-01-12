@@ -20,6 +20,7 @@ let appData = {
 let currentSetup = null;
 let currentScreen = null;
 let navigationHistory = [];
+let scrollPos = 0;
 
 const loadData = async () => {
     try {
@@ -52,6 +53,7 @@ const renderClasses = () => {
     const loading = $('#loading-screen');
     class_container.id = `class`;
     class_container.classList = "card-container";
+
     main.appendChild(class_container);
 
     appData.class.forEach(cls => {
@@ -89,16 +91,13 @@ const renderClasses = () => {
 };
 
 const setUserUI = () => {
-    const fullName = `${appData.user.name} ${appData.user.lastname || ''}`; // lastname might not be in json yet
-    $('#user-name').textContent = appData.user.name; // Header
-    $('#user-class').textContent = `Class ${appData.user.class}`; // Header
-
+    const fullName = `${appData.user.name} ${appData.user.lastname || ''}`;
+    $('#user-name').textContent = appData.user.name;
+    $('#user-class').textContent = `Class ${appData.user.class}`;
     $('#perfil-name').textContent = fullName;
     $('#perfil-class').textContent = `Clase ${appData.user.class}`;
     $('#perfil-wins').textContent = `Podios: ${appData.user.wins}`;
     $('#perfil-races').textContent = `Carreras: ${appData.user.races}`;
-
-    // Country flag in profile
     if (appData.user.country && appData.countries[appData.user.country]) {
         $('#perfil-country').innerHTML = `<img src="assets/flags/${appData.countries[appData.user.country].flag}" alt="${appData.countries[appData.user.country].name}">`;
     }
@@ -125,7 +124,6 @@ const setConfigUI = () => {
 const setHistoryUI = () => {
     const tbody = $('#perfil-history');
     tbody.innerHTML = '';
-    // Sort history by date desc?
     appData.history.slice().reverse().forEach(entry => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
@@ -139,17 +137,31 @@ const setHistoryUI = () => {
     });
 };
 
+const openPopup = (popupId) => {
+    $(`#${popupId}`).classList.remove('d-none');
+}
+
+const closePopup = (popupId) => {
+    $(`#${popupId}`).classList.add('d-none');
+}
+
 const setupEventListeners = () => {
     // Navigation
     $('#user-button').addEventListener('click', () => showScreen('user-screen'));
     $('#config-button').addEventListener('click', () => showScreen('config-screen'));
     $('#home-button').addEventListener('click', () => showScreen('home'));
     $('#return-button').addEventListener('click', goBack);
+    $('#button-wrapper-left').addEventListener('click', () => wrapperCard('left'));
+    $('#button-wrapper-right').addEventListener('click', () => wrapperCard('right'));
 
-    // Config Form
+    // Config Form Save
     $('#config-form').addEventListener('submit', async (e) => {
         e.preventDefault();
-        const formData = new FormData(e.target);
+        openPopup('config-save-popup');
+    });
+
+    $('#config-save-popupsave').addEventListener('click', async () => {
+        const formData = new FormData($('#config-form'));
         appData.user.name = formData.get('name');
         appData.user.lastname = formData.get('lastname');
         appData.user.country = formData.get('country');
@@ -159,30 +171,66 @@ const setupEventListeners = () => {
         if (result.success) {
             setUserUI();
             alert('Configuracion guardada!');
+            closePopup('config-save-popup');
         } else {
             alert('Error al guardar configuracion');
+            closePopup('config-save-popup');
         }
+    })
+
+    $('#config-save-popupcancel').addEventListener('click', () => {
+        closePopup('config-save-popup');
+    })
+
+    $('#config-form').addEventListener('reset', async (e) => {
+        e.preventDefault();
+        openPopup('config-reset-popup');
     });
+
+    $('#config-reset-popupcancel').addEventListener('click', () => {
+        closePopup('config-reset-popup');
+    });
+
+    $('#config-reset-popupreset').addEventListener('click', () => {
+        $('#config-name').value = '';
+        $('#config-lastname').value = '';
+        $('#config-countries').value = 'AR';
+        $('#config-mode').value = 'Carrera';
+        closePopup('config-reset-popup');
+    })
 
     // Result Save
     $('#result-save').addEventListener('click', async () => {
+        const position = $('#result-race').value;
+
+        if (!position) {
+            alert('Ingrese una posicion final');
+            return;
+        }
+
+        openPopup('result-save-popup');
+    });
+
+    $('#result-save-popupcancel').addEventListener('click', () => {
+        closePopup('result-save-popup');
+    });
+
+    $('#result-save-popupsave').addEventListener('click', async () => {
         const classification = $('#result-classification').value;
         const position = $('#result-race').value;
 
-        if (!classification || !position) {
-            alert('Ingrese clasificacion y posicion final');
+        if (!position) {
+            alert('Ingrese una posicion final');
             return;
         }
 
         if (!currentSetup) return;
 
-        // Update User Stats
         appData.user.races = (parseInt(appData.user.races) + 1).toString();
         if (parseInt(position) <= 3) {
             appData.user.wins = (parseInt(appData.user.wins) + 1).toString();
         }
 
-        // Add to History
         const newEntry = {
             date: new Date().toLocaleDateString(),
             circuit: currentSetup.circuitName,
@@ -192,13 +240,15 @@ const setupEventListeners = () => {
         };
         appData.history.push(newEntry);
 
-        // Add Last Result
         let id = `${currentSetup.char}-${currentSetup.category_number}`;
         let number = currentSetup.race.number - 1;
-        appData.races[id][number].classification = classification;
-        appData.races[id][number].position = position;
+        let race = $(`#race-${currentSetup.char}-${currentSetup.category_number}-${currentSetup.race.number}`);
+        if (!appData.races[id][number].position || position <= appData.races[id][number].position) {
+            appData.races[id][number].classification = classification;
+            appData.races[id][number].position = position;
+            setLabelRace(race, position);
+        }
 
-        // Save Files
         const userSave = await window.dataManager.save('data_user.json', appData.user);
         const historySave = await window.dataManager.save('data_history.json', appData.history);
         const racesSave = await window.dataManager.save('data_races.json', appData.races);
@@ -206,11 +256,13 @@ const setupEventListeners = () => {
         if (userSave.success && historySave.success && racesSave.success) {
             setUserUI();
             setHistoryUI();
-            alert('Resultados guardados!');
+            closePopup('result-save-popup');
         } else {
             alert('Error al guardar resultados');
+            closePopup('result-save-popup');
         }
     });
+
 
     // Extra UI Interactions
     $('#user-editperfil').addEventListener('click', () => showScreen('config-screen'));
@@ -223,6 +275,7 @@ const setupEventListeners = () => {
         appData.history = [];
         await window.dataManager.save('data_user.json', appData.user);
         await window.dataManager.save('data_history.json', appData.history);
+        // FALTA QUE SE RESETEEN LAS POSICIONES DE LAS CARRERAS
         setUserUI();
         setHistoryUI();
         $('#user-resetClass-popup').classList.add('d-none');
@@ -231,7 +284,62 @@ const setupEventListeners = () => {
     $('#info-setup-popupcancel').addEventListener('click', () => $('#info-setup-popup').classList.add('d-none'));
 };
 
-// Navigation Logic
+const setLabelRace = (race, position) => {
+    let band = race.querySelector('.card-label');
+    if (position && position >= 1) {
+        band.innerHTML = position;
+        switch (position) {
+            case "1":
+                band.classList = `card-label result-race bg-gold`;
+                break;
+            case "2":
+                band.classList = `card-label result-race bg-silver`;
+                break;
+            case "3":
+                band.classList = `card-label result-race bg-bronce`;
+                break;
+            default:
+                band.classList = `card-label result-race bg-secondary`;
+                break;
+        }
+    }
+}
+
+const wrapperCard = (direction) => {
+    const main = $(currentScreen === "#home" ? "#class" : currentScreen);
+    if (direction === 'left') {
+        scrollPos += 306;
+
+        if (scrollPos > 0) {
+            scrollPos = 0;
+        }
+        main.style.transform = `translateX(${scrollPos}px)`;
+    } else {
+        scrollPos -= 306;
+        if (scrollPos < main.offsetWidth * -1) {
+            scrollPos = main.offsetWidth * -1;
+        }
+        main.style.transform = `translateX(${scrollPos}px)`;
+    }
+}
+
+const resetMain = () => {
+    const main = $(currentScreen === "#home" ? "#class" : currentScreen);
+    const body = document.body;
+    main.style.transform = 'translateX(0)';
+    scrollPos = 0;
+    let width = main.offsetWidth;
+    let bodyWidth = body.clientWidth - 212;
+    if (width > bodyWidth) {
+        $('#button-wrapper-left').classList.remove('d-none');
+        $('#button-wrapper-right').classList.remove('d-none');
+    }
+    else {
+        $('#button-wrapper-left').classList.add('d-none');
+        $('#button-wrapper-right').classList.add('d-none');
+    }
+}
+
 const showScreen = (screenId) => {
     if (screenId === 'home') {
         navigationHistory = [];
@@ -240,7 +348,6 @@ const showScreen = (screenId) => {
     }
 
     currentScreen = `#${screenId}`;
-
     ['config-screen', 'user-screen', 'setup'].forEach(id => $(`#${id}`).classList.add('d-none'));
     document.querySelectorAll('.card-container').forEach(el => el.classList.add('d-none'));
 
@@ -252,9 +359,8 @@ const showScreen = (screenId) => {
         $(`#${screenId}`).classList.remove('d-none');
         $('#home').classList.remove('d-none');
     }
-
-
-};
+    resetMain();
+}
 
 const goBack = () => {
     if (navigationHistory.length === 0) {
@@ -282,7 +388,8 @@ const goBack = () => {
         if (el) el.classList.remove('d-none');
         $('#home').classList.remove('d-none');
     }
-};
+    resetMain();
+}
 
 function openCategory(char) {
     if (currentScreen) navigationHistory.push(currentScreen);
@@ -290,6 +397,7 @@ function openCategory(char) {
     $(`#class`).classList.add("d-none");
     $(`#category-${char}`).classList.remove("d-none");
     $('#home').classList.remove('d-none');
+    resetMain();
 }
 
 function openRace(char, category_number) {
@@ -297,6 +405,7 @@ function openRace(char, category_number) {
     currentScreen = `#race-${char}-${category_number}`;
     $(`#category-${char}`).classList.add("d-none");
     $(`#race-${char}-${category_number}`).classList.remove("d-none");
+    resetMain();
 }
 
 function openSetup(char, category_number, race) {
@@ -305,7 +414,6 @@ function openSetup(char, category_number, race) {
     $(`#race-${char}-${category_number}`).classList.add("d-none");
     $('#setup').classList.remove('d-none');
     let id = `${char}-${category_number}-${race.number}`;
-    // set Setup Screen
     const setupData = appData.setup[`${char}-${category_number}`];
     const raceSetup = setupData[race.number];
     currentSetup = {
@@ -316,7 +424,6 @@ function openSetup(char, category_number, race) {
         carName: setupData.car.name
     };
 
-    // set UI elements for setup
     const setupConfig = $('#setup-config');
     setupConfig.innerHTML = `
         <h3>${raceSetup.circuit.name}</h3>
@@ -369,10 +476,14 @@ function openSetup(char, category_number, race) {
         $('#result-classification').value = '';
         $('#result-race').value = '';
     }
+    resetMain();
 }
 
 loadData();
 
-// QUE LAS TARJETAS SEAN UN CARRUSEL SIEMPRE
-// CUANDO SE ACTUALIZA EL RESULTADO ACTUALIZAR LA TARJETA DE CARRERA
-// 
+// HACER LOS MENSAJES DE ALERTA
+// HACER QUE EL CARRUCEL SE MUEVA CON LA FUNCION wrapperCard
+// VER QUE EL RESET RESETEE TODOS LOS DATOS
+// RESPONSIBIDAD
+// AGREGAR DLC A LA CONFIGURACION
+// AGREGAR LOS DATOS DE LA ULTIMA CARRERA AL PERFIL perfil-lastrace

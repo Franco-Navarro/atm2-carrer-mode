@@ -34,7 +34,9 @@
       "circuit_name": "Goiania Corto",
       "layout_src": "GoianiaShort.webp",
       "circuit_country": "Brasil",
-      "circuit_length": "1910"
+      "circuit_length": "1910",
+      "classification": "4",
+      "position": "10"
     },
     {
       "number": "2",
@@ -80,35 +82,45 @@
       "circuit_name": "Brasilia Completo",
       "layout_src": "Brasilia_Full.webp",
       "circuit_country": "Brasil",
-      "circuit_length": "5476"
+      "circuit_length": "5476",
+      "classification": "1",
+      "position": "1"
     },
     {
       "number": "2",
       "circuit_name": "Cascavel",
       "layout_src": "Cascavel.webp",
       "circuit_country": "Brasil",
-      "circuit_length": "3302"
+      "circuit_length": "3302",
+      "classification": "2",
+      "position": "2"
     },
     {
       "number": "3",
       "circuit_name": "Velopark 2017",
       "layout_src": "Velopark_2017.webp",
       "circuit_country": "Brasil",
-      "circuit_length": "2278"
+      "circuit_length": "2278",
+      "classification": "3",
+      "position": "2"
     },
     {
       "number": "4",
       "circuit_name": "Ibarra Yahuarcocha",
       "layout_src": "Ibarra.webp",
       "circuit_country": "Ecuador",
-      "circuit_length": "2190"
+      "circuit_length": "2190",
+      "classification": "4",
+      "position": "1"
     },
     {
       "number": "5",
       "circuit_name": "Jacarepagua 2005",
       "layout_src": "Jacarepagua_2005.webp",
       "circuit_country": "Brasil",
-      "circuit_length": "4905"
+      "circuit_length": "4905",
+      "classification": "1",
+      "position": "4"
     }
   ],
   "C-2": [
@@ -117,7 +129,9 @@
       "circuit_name": "Curitiba Externo",
       "layout_src": "Curitiba_outer.webp",
       "circuit_country": "Brasil",
-      "circuit_length": "2600"
+      "circuit_length": "2600",
+      "classification": "3",
+      "position": "1"
     },
     {
       "number": "2",
