@@ -187,5 +187,26 @@
     "vehicle": "Kart 125CC Shifter",
     "classification": "3",
     "position": "2"
+  },
+  {
+    "date": "12/1/2026",
+    "circuit": "Buskerud Largo",
+    "vehicle": "Kart 125CC Shifter",
+    "classification": "1",
+    "position": "1"
+  },
+  {
+    "date": "12/1/2026",
+    "circuit": "Taruma Internacional",
+    "vehicle": "Formula Inter MG-15",
+    "classification": "3",
+    "position": "1"
+  },
+  {
+    "date": "12/1/2026",
+    "circuit": "Cascavel",
+    "vehicle": "Formula Vee",
+    "classification": "1",
+    "position": "1"
   }
 ]

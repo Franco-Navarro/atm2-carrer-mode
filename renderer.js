@@ -1,7 +1,8 @@
 // Aca se llevan a cabo los procesos del navegador/cliente
 import { createCardClass } from "./components/card_class.js";
 import { createCardCategory } from "./components/card_category.js";
-import { createCardRace } from "./components/card_race.js";
+import { createCardRace, setLabelRace } from "./components/card_race.js";
+import { createAlert } from "./components/alert.js";
 
 const $ = selector => document.querySelector(selector);
 const main = $('#main');
@@ -148,6 +149,7 @@ const closePopup = (popupId) => {
 const setupEventListeners = () => {
     // Navigation
     $('#user-button').addEventListener('click', () => showScreen('user-screen'));
+    $('#user-editperfil').addEventListener('click', () => showScreen('config-screen'));
     $('#config-button').addEventListener('click', () => showScreen('config-screen'));
     $('#home-button').addEventListener('click', () => showScreen('home'));
     $('#return-button').addEventListener('click', goBack);
@@ -170,10 +172,10 @@ const setupEventListeners = () => {
         const result = await window.dataManager.save('data_user.json', appData.user);
         if (result.success) {
             setUserUI();
-            alert('Configuracion guardada!');
+            createAlert('Configuracion guardada', 'success');
             closePopup('config-save-popup');
         } else {
-            alert('Error al guardar configuracion');
+            createAlert('Error al guardar configuracion', 'error');
             closePopup('config-save-popup');
         }
     })
@@ -196,6 +198,7 @@ const setupEventListeners = () => {
         $('#config-lastname').value = '';
         $('#config-countries').value = 'AR';
         $('#config-mode').value = 'Carrera';
+        createAlert('Los cambios no se aplicaran hasta que guarde', 'info');
         closePopup('config-reset-popup');
     })
 
@@ -204,7 +207,7 @@ const setupEventListeners = () => {
         const position = $('#result-race').value;
 
         if (!position) {
-            alert('Ingrese una posicion final');
+            createAlert('Ingrese una posicion final', 'error');
             return;
         }
 
@@ -220,7 +223,7 @@ const setupEventListeners = () => {
         const position = $('#result-race').value;
 
         if (!position) {
-            alert('Ingrese una posicion final');
+            createAlert('Ingrese una posicion final', 'error');
             return;
         }
 
@@ -254,18 +257,17 @@ const setupEventListeners = () => {
         const racesSave = await window.dataManager.save('data_races.json', appData.races);
 
         if (userSave.success && historySave.success && racesSave.success) {
+            createAlert('Resultados guardados', 'success');
             setUserUI();
             setHistoryUI();
             closePopup('result-save-popup');
         } else {
-            alert('Error al guardar resultados');
+            createAlert('Error al guardar resultados', 'error');
             closePopup('result-save-popup');
         }
     });
 
-
-    // Extra UI Interactions
-    $('#user-editperfil').addEventListener('click', () => showScreen('config-screen'));
+    // Reset Class
     $('#user-resetClass').addEventListener('click', () => $('#user-resetClass-popup').classList.remove('d-none'));
     $('#user-resetClass-popupcancel').addEventListener('click', () => $('#user-resetClass-popup').classList.add('d-none'));
     $('#user-resetClass-popupreset').addEventListener('click', async () => {
@@ -278,32 +280,16 @@ const setupEventListeners = () => {
         // FALTA QUE SE RESETEEN LAS POSICIONES DE LAS CARRERAS
         setUserUI();
         setHistoryUI();
+        createAlert('Clase restablecida', 'success');
         $('#user-resetClass-popup').classList.add('d-none');
     });
+
+    // Info Setup
     $('#setup-info-button').addEventListener('click', () => $('#info-setup-popup').classList.remove('d-none'));
     $('#info-setup-popupcancel').addEventListener('click', () => $('#info-setup-popup').classList.add('d-none'));
 };
 
-const setLabelRace = (race, position) => {
-    let band = race.querySelector('.card-label');
-    if (position && position >= 1) {
-        band.innerHTML = position;
-        switch (position) {
-            case "1":
-                band.classList = `card-label result-race bg-gold`;
-                break;
-            case "2":
-                band.classList = `card-label result-race bg-silver`;
-                break;
-            case "3":
-                band.classList = `card-label result-race bg-bronce`;
-                break;
-            default:
-                band.classList = `card-label result-race bg-secondary`;
-                break;
-        }
-    }
-}
+
 
 const wrapperCard = (direction) => {
     const main = $(currentScreen === "#home" ? "#class" : currentScreen);
@@ -481,7 +467,6 @@ function openSetup(char, category_number, race) {
 
 loadData();
 
-// HACER LOS MENSAJES DE ALERTA
 // HACER QUE EL CARRUCEL SE MUEVA CON LA FUNCION wrapperCard
 // VER QUE EL RESET RESETEE TODOS LOS DATOS
 // RESPONSIBIDAD
