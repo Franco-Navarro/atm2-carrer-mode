@@ -36,7 +36,7 @@
       "circuit_country": "Brasil",
       "circuit_length": "1910",
       "classification": "4",
-      "position": "10"
+      "position": "3"
     },
     {
       "number": "2",
@@ -52,7 +52,9 @@
       "circuit_name": "Jacarepagua 2005",
       "layout_src": "Jacarepagua_2005.webp",
       "circuit_country": "Brasil",
-      "circuit_length": "4905"
+      "circuit_length": "4905",
+      "classification": "1",
+      "position": "2"
     }
   ],
   "D-3": [

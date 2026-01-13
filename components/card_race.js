@@ -1,7 +1,7 @@
 export function createCardRace(char, category, race) {
     let band = '';
     if (race.position && race.position >= 1) {
-        switch (race.position) {
+        switch (race.position.toString()) {
             case "1":
                 band = `<div class="card-label result-race bg-gold">${race.position}</div>`;
                 break;
@@ -47,7 +47,7 @@ export function setLabelRace(race, position) {
     let band = race.querySelector('.card-label');
     if (position && position >= 1) {
         band.innerHTML = position;
-        switch (position) {
+        switch (position.toString()) {
             case "1":
                 band.classList = `card-label result-race bg-gold`;
                 break;

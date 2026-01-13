@@ -221,14 +221,12 @@ const setupEventListeners = () => {
     $('#result-save-popupsave').addEventListener('click', async () => {
         const classification = $('#result-classification').value;
         const position = $('#result-race').value;
-
         if (!position) {
             createAlert('Ingrese una posicion final', 'error');
             return;
         }
 
         if (!currentSetup) return;
-
         appData.user.races = (parseInt(appData.user.races) + 1).toString();
         if (parseInt(position) <= 3) {
             appData.user.wins = (parseInt(appData.user.wins) + 1).toString();
@@ -246,7 +244,7 @@ const setupEventListeners = () => {
         let id = `${currentSetup.char}-${currentSetup.category_number}`;
         let number = currentSetup.race.number - 1;
         let race = $(`#race-${currentSetup.char}-${currentSetup.category_number}-${currentSetup.race.number}`);
-        if (!appData.races[id][number].position || position <= appData.races[id][number].position) {
+        if (!appData.races[id][number].position || parseInt(position) <= appData.races[id][number].position) {
             appData.races[id][number].classification = classification;
             appData.races[id][number].position = position;
             setLabelRace(race, position);
@@ -293,30 +291,37 @@ const setupEventListeners = () => {
 
 const wrapperCard = (direction) => {
     const main = $(currentScreen === "#home" ? "#class" : currentScreen);
+    if (!main) {
+        showScreen('home');
+        return;
+    }
+    const maxScroll = main.scrollWidth - main.offsetWidth;
     if (direction === 'left') {
         scrollPos += 306;
-
         if (scrollPos > 0) {
             scrollPos = 0;
         }
-        main.style.transform = `translateX(${scrollPos}px)`;
     } else {
         scrollPos -= 306;
-        if (scrollPos < main.offsetWidth * -1) {
-            scrollPos = main.offsetWidth * -1;
+        if (scrollPos < -maxScroll) {
+            scrollPos = -maxScroll;
         }
-        main.style.transform = `translateX(${scrollPos}px)`;
     }
+    main.style.transform = `translateX(${scrollPos}px)`;
 }
 
 const resetMain = () => {
+    const noWrapper = ['#config-screen', '#user-screen', '#setup'];
     const main = $(currentScreen === "#home" ? "#class" : currentScreen);
-    const body = document.body;
+    if (!main) {
+        showScreen('home');
+        return;
+    }
+
     main.style.transform = 'translateX(0)';
     scrollPos = 0;
-    let width = main.offsetWidth;
-    let bodyWidth = body.clientWidth - 212;
-    if (width > bodyWidth) {
+
+    if (main.scrollWidth > main.offsetWidth && !noWrapper.includes(currentScreen)) {
         $('#button-wrapper-left').classList.remove('d-none');
         $('#button-wrapper-right').classList.remove('d-none');
     }
@@ -467,7 +472,6 @@ function openSetup(char, category_number, race) {
 
 loadData();
 
-// HACER QUE EL CARRUCEL SE MUEVA CON LA FUNCION wrapperCard
 // VER QUE EL RESET RESETEE TODOS LOS DATOS
 // RESPONSIBIDAD
 // AGREGAR DLC A LA CONFIGURACION
