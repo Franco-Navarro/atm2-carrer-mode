@@ -44,7 +44,7 @@ export function createCardRace(char, category, race) {
 
 
 export function setLabelRace(race, position) {
-    let band = race.querySelector('.card-label');
+    let band = race.querySelector('.card-label')
     if (position && position >= 1) {
         band.innerHTML = position;
         switch (position.toString()) {
@@ -61,5 +61,9 @@ export function setLabelRace(race, position) {
                 band.classList = `card-label result-race bg-secondary`;
                 break;
         }
+    }
+    else {
+        band.classList = `card-label result-race`;
+        band.innerHTML = '';
     }
 }

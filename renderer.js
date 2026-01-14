@@ -273,9 +273,20 @@ const setupEventListeners = () => {
         appData.user.wins = "0";
         appData.user.races = "0";
         appData.history = [];
+        const races = appData.races;
+        Object.keys(races).forEach(key => {
+            races[key].forEach(race => {
+                let card = $(`#race-${key}-${race.number}`);
+                if (race.position) {
+                    race.position = null;
+                    race.classification = null;
+                    setLabelRace(card, null);
+                }
+            });
+        });
         await window.dataManager.save('data_user.json', appData.user);
         await window.dataManager.save('data_history.json', appData.history);
-        // FALTA QUE SE RESETEEN LAS POSICIONES DE LAS CARRERAS
+        await window.dataManager.save('data_races.json', races);
         setUserUI();
         setHistoryUI();
         createAlert('Clase restablecida', 'success');
@@ -404,7 +415,6 @@ function openSetup(char, category_number, race) {
     currentScreen = `#setup`;
     $(`#race-${char}-${category_number}`).classList.add("d-none");
     $('#setup').classList.remove('d-none');
-    let id = `${char}-${category_number}-${race.number}`;
     const setupData = appData.setup[`${char}-${category_number}`];
     const raceSetup = setupData[race.number];
     currentSetup = {
