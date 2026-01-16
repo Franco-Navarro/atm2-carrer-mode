@@ -15,7 +15,7 @@ let appData = {
     user: {},
     countries: {},
     history: [],
-    lastResult: {}
+    lastRace: null
 };
 
 let currentSetup = null;
@@ -102,6 +102,27 @@ const setUserUI = () => {
     if (appData.user.country && appData.countries[appData.user.country]) {
         $('#perfil-country').innerHTML = `<img src="assets/flags/${appData.countries[appData.user.country].flag}" alt="${appData.countries[appData.user.country].name}">`;
     }
+    setLastRaceUI();
+};
+
+const setLastRaceUI = () => {
+    const lastRace = appData.history[appData.history.length - 1];
+    if (!lastRace) return;
+    $('#perfil-lastrace').innerHTML = `        
+        <div class="perfil-lastrace-pos">
+          <h4>Ultima Carrera</h4>
+          <p>Posicion Final: ${lastRace.position}</p>
+          <p>Clasificacion: ${lastRace.classification}</p>
+          <p>Fecha: ${lastRace.date}</p>
+        </div>
+        <div class="perfil-lastrace-circuit">
+          <h5>${lastRace.circuit}</h5>
+          <img src="assets/layout/${lastRace.layout_src}" alt="${lastRace.circuit}">
+        </div>
+        <div class="perfil-lastrace-car">
+          <h5>${lastRace.car_name}</h5>
+          <img src="assets/cars/${lastRace.car_src}" alt="${lastRace.car_name}">
+        </div>`;
 };
 
 const setConfigUI = () => {
@@ -130,9 +151,9 @@ const setHistoryUI = () => {
         tr.innerHTML = `
             <td>${entry.date}</td>
             <td>${entry.circuit}</td>
-            <td>${entry.vehicle}</td>
+            <td>${entry.car_name}</td>
             <td>${entry.classification}</td>
-            <td>${entry.position}</td>
+            <td>${entry.position}</td>  
         `;
         tbody.appendChild(tr);
     });
@@ -232,18 +253,21 @@ const setupEventListeners = () => {
             appData.user.wins = (parseInt(appData.user.wins) + 1).toString();
         }
 
-        const newEntry = {
-            date: new Date().toLocaleDateString(),
-            circuit: currentSetup.circuitName,
-            vehicle: currentSetup.carName,
-            classification: classification,
-            position: position
-        };
-        appData.history.push(newEntry);
-
         let id = `${currentSetup.char}-${currentSetup.category_number}`;
         let number = currentSetup.race.number - 1;
         let race = $(`#race-${currentSetup.char}-${currentSetup.category_number}-${currentSetup.race.number}`);
+
+        const newEntry = {
+            position: position,
+            classification: classification,
+            date: new Date().toLocaleDateString(),
+            circuit: currentSetup.race.circuit_name,
+            layout_src: currentSetup.race.layout_src,
+            car_name: currentSetup.car.name,
+            car_src: currentSetup.car.src
+        };
+        appData.history.push(newEntry);
+
         if (!appData.races[id][number].position || parseInt(position) <= appData.races[id][number].position) {
             appData.races[id][number].classification = classification;
             appData.races[id][number].position = position;
@@ -422,7 +446,7 @@ function openSetup(char, category_number, race) {
         category_number: category_number,
         race: race,
         circuitName: race.circuit_name,
-        carName: setupData.car.name
+        car: setupData.car
     };
 
     const setupConfig = $('#setup-config');
@@ -482,7 +506,5 @@ function openSetup(char, category_number, race) {
 
 loadData();
 
-// VER QUE EL RESET RESETEE TODOS LOS DATOS
 // RESPONSIBIDAD
 // AGREGAR DLC A LA CONFIGURACION
-// AGREGAR LOS DATOS DE LA ULTIMA CARRERA AL PERFIL perfil-lastrace
