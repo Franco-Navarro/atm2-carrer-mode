@@ -12,6 +12,7 @@ let appData = {
     category: {},
     races: {},
     setup: {},
+    dlc: {},
     user: {},
     countries: {},
     history: [],
@@ -30,6 +31,7 @@ const loadData = async () => {
         appData.category = await window.dataManager.load("data_category.json");
         appData.races = await window.dataManager.load("data_races.json");
         appData.setup = await window.dataManager.load("data_setup.json");
+        appData.dlc = await window.dataManager.load("data_dlc.json");
         appData.user = await window.dataManager.load("data_user.json");
         appData.countries = await window.dataManager.load("data_country.json");
         appData.history = await window.dataManager.load("data_history.json") || [];
@@ -128,6 +130,7 @@ const setLastRaceUI = () => {
 const setConfigUI = () => {
     $('#config-name').value = appData.user.name || '';
     $('#config-lastname').value = appData.user.lastname || '';
+    $('#config-mode').value = appData.user.mode || 'Carrera';
 
     const countrySelect = $('#config-countries');
     countrySelect.innerHTML = '';
@@ -139,8 +142,19 @@ const setConfigUI = () => {
         if (appData.user.country === code) option.selected = true;
         countrySelect.appendChild(option);
     });
-
-    $('#config-mode').value = appData.user.mode || 'Carrera';
+    const dlcContainer = $('#config-dlc');
+    dlcContainer.innerHTML = '';
+    Object.keys(appData.dlc).sort().forEach(code => {
+        const dlc = appData.dlc[code];
+        const item = document.createElement('label');
+        item.classList.add('config-dlc-list-item');
+        item.innerHTML = `
+            ${dlc.name}
+            <input type="checkbox" id="dlc-${code}" name="dlc-${code}" value="${code}">
+            <span class="checkmark"></span>`;
+        if (appData.user.dlc && appData.user.dlc[code]) item.querySelector('input').checked = true;
+        dlcContainer.appendChild(item);
+    });
 };
 
 const setHistoryUI = () => {
@@ -189,7 +203,11 @@ const setupEventListeners = () => {
         appData.user.lastname = formData.get('lastname');
         appData.user.country = formData.get('country');
         appData.user.mode = formData.get('mode');
-
+        Object.keys(appData.dlc).sort().forEach(code => {
+            let dlc = formData.get(`dlc-${code}`)
+            if (dlc) appData.user.dlc[code] = true;
+            else appData.user.dlc[code] = false;
+        });
         const result = await window.dataManager.save('data_user.json', appData.user);
         if (result.success) {
             setUserUI();
@@ -219,6 +237,9 @@ const setupEventListeners = () => {
         $('#config-lastname').value = '';
         $('#config-countries').value = 'AR';
         $('#config-mode').value = 'Carrera';
+        Object.keys(appData.dlc).sort().forEach(code => {
+            $('#dlc-' + code).checked = false;
+        });
         createAlert('Los cambios no se aplicaran hasta que guarde', 'info');
         closePopup('config-reset-popup');
     })
@@ -507,4 +528,3 @@ function openSetup(char, category_number, race) {
 loadData();
 
 // RESPONSIBIDAD
-// AGREGAR DLC A LA CONFIGURACION
