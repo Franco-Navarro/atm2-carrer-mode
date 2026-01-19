@@ -144,15 +144,23 @@ const setConfigUI = () => {
     });
     const dlcContainer = $('#config-dlc');
     dlcContainer.innerHTML = '';
-    Object.keys(appData.dlc).sort().forEach(code => {
-        const dlc = appData.dlc[code];
+    let array = [];
+    Object.keys(appData.dlc).forEach(code => {
+        array.push({
+            code: code,
+            name: appData.dlc[code].name
+        });
+    });
+    array.sort((a, b) => a.name.localeCompare(b.name));
+    array.forEach(element => {
+        const dlc = appData.dlc[element.code];
         const item = document.createElement('label');
         item.classList.add('config-dlc-list-item');
         item.innerHTML = `
             ${dlc.name}
-            <input type="checkbox" id="dlc-${code}" name="dlc-${code}" value="${code}">
+            <input type="checkbox" id="dlc-${element.code}" name="dlc-${element.code}" value="${element.code}">
             <span class="checkmark"></span>`;
-        if (appData.user.dlc && appData.user.dlc[code]) item.querySelector('input').checked = true;
+        if (appData.user.dlc && appData.user.dlc[element.code]) item.querySelector('input').checked = true;
         dlcContainer.appendChild(item);
     });
 };
@@ -528,3 +536,5 @@ function openSetup(char, category_number, race) {
 loadData();
 
 // RESPONSIBIDAD
+// MENUS DE ARRIBA
+// MODO HISTORIA -> VER COMO IMPLEMENTAR EL SISTEMA DE PUNTOS

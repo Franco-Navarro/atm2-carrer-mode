@@ -6,7 +6,7 @@
         "name": "Adrenaline Pack Part 2"
     },
     "3": {
-        "name": "Brazilian Racing Legends Pack Part 1"
+        "name": "Brazilian Racing Legends Pack"
     },
     "4": {
         "name": "Circuit de Catalunya-Barcelona"
@@ -67,5 +67,17 @@
     },
     "23": {
         "name": "Lamborghini Dream Pack Part 2"
+    },
+    "24": {
+        "name": "Supercars Pack Part 1"
+    },
+    "25": {
+        "name": "Historical Endurance Pack Part 1"
+    },
+    "26": {
+        "name": "Historical Track Pack Part 3"
+    },
+    "27": {
+        "name": "Supercars Pack Part 2"
     }
 }
