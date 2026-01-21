@@ -6,8 +6,8 @@
       "layout_src": "Buskerud_Long.webp",
       "circuit_country": "Noruega",
       "circuit_length": "1531",
-      "classification": "1",
-      "position": "1"
+      "classification": null,
+      "position": null
     },
     {
       "number": "2",
@@ -337,8 +337,8 @@
       "layout_src": "Cascavel.webp",
       "circuit_country": "Brasil",
       "circuit_length": "3302",
-      "position": "1",
-      "classification": "1"
+      "position": null,
+      "classification": null
     },
     {
       "number": "3",

@@ -1,12 +1,12 @@
 {
   "name": "Franco",
   "number": "21",
-  "wins": "2",
-  "races": "2",
+  "wins": "0",
+  "races": "0",
   "class": "D",
   "lastname": "Navarro",
   "country": "AR",
-  "mode": "libre",
+  "mode": "Carrera",
   "dlc": {
     "1": false,
     "2": false,
@@ -30,6 +30,10 @@
     "20": true,
     "21": true,
     "22": true,
-    "23": false
+    "23": false,
+    "24": false,
+    "25": false,
+    "26": false,
+    "27": false
   }
 }

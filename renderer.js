@@ -23,6 +23,7 @@ let currentSetup = null;
 let currentScreen = null;
 let navigationHistory = [];
 let scrollPos = 0;
+const CLASS_ORDER = ['D', 'C', 'B', 'A', 'S'];
 
 const loadData = async () => {
     try {
@@ -51,6 +52,40 @@ const initUI = () => {
     appData.user.name ? showScreen('home') : showScreen('config-screen');
 };
 
+const checkCategoryCompletion = (char, catNumber) => {
+    const races = appData.races[`${char}-${catNumber}`];
+    if (!races || races.length === 0) return false;
+    const totalRaces = races.length;
+    let podiums = 0;
+    races.forEach(r => {
+        if (r.position && parseInt(r.position) <= 3) {
+            podiums++;
+        }
+    });
+    return podiums >= (totalRaces / 2.0);
+};
+
+const checkClassCompletion = (char) => {
+    const categories = appData.category[char];
+    if (!categories || categories.length === 0) return false;
+    const totalCategories = categories.length;
+    let completedCategories = 0;
+    categories.forEach(cat => {
+        if (checkCategoryCompletion(char, cat.number)) {
+            completedCategories++;
+        }
+    });
+    return completedCategories >= (totalCategories / 2.0);
+};
+
+const isClassUnlocked = (char) => {
+    const index = CLASS_ORDER.indexOf(char);
+    if (index === 0) return true;
+    if (index === -1) return false;
+    const prevClass = CLASS_ORDER[index - 1];
+    return checkClassCompletion(prevClass);
+};
+
 const renderClasses = () => {
     const class_container = document.createElement("div");
     const loading = $('#loading-screen');
@@ -61,9 +96,15 @@ const renderClasses = () => {
 
     appData.class.forEach(cls => {
         const class_card = createCardClass(cls);
-        class_card.addEventListener('click', () => openCategory(cls.char));
-        class_container.appendChild(class_card);
+        const unlocked = appData.user.mode === 'Carrera' ? isClassUnlocked(cls.char) : true;
 
+        if (unlocked) {
+            class_card.classList.remove('disabled');
+            class_card.addEventListener('click', () => openCategory(cls.char));
+        } else {
+            class_card.classList.add('disabled');
+        }
+        class_container.appendChild(class_card);
         const category_container = document.createElement("div");
         category_container.id = `category-${cls.char}`;
         category_container.classList = "card-container d-none";
@@ -96,7 +137,7 @@ const renderClasses = () => {
 const setUserUI = () => {
     const fullName = `${appData.user.name} ${appData.user.lastname || ''}`;
     $('#user-name').textContent = appData.user.name;
-    $('#user-class').textContent = `Class ${appData.user.class}`;
+    $('#user-class').textContent = `Clase ${appData.user.class}`;
     $('#perfil-name').textContent = fullName;
     $('#perfil-class').textContent = `Clase ${appData.user.class}`;
     $('#perfil-wins').textContent = `Podios: ${appData.user.wins}`;
@@ -216,6 +257,16 @@ const setupEventListeners = () => {
             if (dlc) appData.user.dlc[code] = true;
             else appData.user.dlc[code] = false;
         });
+        appData.class.forEach(cls => {
+            const class_card = $(`#class-${cls.char}`);
+            const unlocked = appData.user.mode === 'Carrera' ? isClassUnlocked(cls.char) : true;
+            if (unlocked) {
+                class_card.classList.remove('disabled');
+                class_card.addEventListener('click', () => openCategory(cls.char));
+            } else {
+                class_card.classList.add('disabled');
+            }
+        });
         const result = await window.dataManager.save('data_user.json', appData.user);
         if (result.success) {
             setUserUI();
@@ -285,6 +336,9 @@ const setupEventListeners = () => {
         let id = `${currentSetup.char}-${currentSetup.category_number}`;
         let number = currentSetup.race.number - 1;
         let race = $(`#race-${currentSetup.char}-${currentSetup.category_number}-${currentSetup.race.number}`);
+        let index = CLASS_ORDER.indexOf(currentSetup.char);
+        let nextClass = CLASS_ORDER[index + 1];
+        let unlocked = appData.user.mode === 'Carrera' ? isClassUnlocked(nextClass) : true;
 
         const newEntry = {
             position: position,
@@ -301,6 +355,13 @@ const setupEventListeners = () => {
             appData.races[id][number].classification = classification;
             appData.races[id][number].position = position;
             setLabelRace(race, position);
+
+            if (unlocked) {
+                const class_card = $(`#class-${nextClass}`);
+                class_card.classList.remove('disabled');
+                class_card.addEventListener('click', () => openCategory(nextClass));
+                appData.user.class = nextClass;
+            }
         }
 
         const userSave = await window.dataManager.save('data_user.json', appData.user);
@@ -326,9 +387,9 @@ const setupEventListeners = () => {
         appData.user.wins = "0";
         appData.user.races = "0";
         appData.history = [];
-        const races = appData.races;
-        Object.keys(races).forEach(key => {
-            races[key].forEach(race => {
+
+        Object.keys(appData.races).forEach(key => {
+            appData.races[key].forEach(race => {
                 let card = $(`#race-${key}-${race.number}`);
                 if (race.position) {
                     race.position = null;
@@ -337,9 +398,22 @@ const setupEventListeners = () => {
                 }
             });
         });
+
+        appData.class.forEach(cls => {
+            const class_card = $(`#class-${cls.char}`);
+            const unlocked = appData.user.mode === 'Carrera' ? isClassUnlocked(cls.char) : true;
+
+            if (unlocked) {
+                class_card.classList.remove('disabled');
+                class_card.addEventListener('click', () => openCategory(cls.char));
+            } else {
+                class_card.classList.add('disabled');
+            }
+        });
+
         await window.dataManager.save('data_user.json', appData.user);
         await window.dataManager.save('data_history.json', appData.history);
-        await window.dataManager.save('data_races.json', races);
+        await window.dataManager.save('data_races.json', appData.races);
         setUserUI();
         setHistoryUI();
         createAlert('Clase restablecida', 'success');
@@ -447,6 +521,8 @@ const goBack = () => {
 }
 
 function openCategory(char) {
+    let unlocked = appData.user.mode === 'Carrera' ? isClassUnlocked(char) : true;
+    if (!unlocked) return;
     if (currentScreen) navigationHistory.push(currentScreen);
     currentScreen = `#category-${char}`;
     $(`#class`).classList.add("d-none");
