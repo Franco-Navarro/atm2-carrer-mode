@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "position": "3",
+    "classification": "1",
+    "date": "22/1/2026",
+    "circuit": "Buskerud Largo",
+    "layout_src": "Buskerud_Long.webp",
+    "car_name": "Kart 125CC Shifter",
+    "car_src": "KartShifter.png"
+  },
+  {
+    "position": "1",
+    "classification": "1",
+    "date": "22/1/2026",
+    "circuit": "Interlagos Kart Dos",
+    "layout_src": "InterlagosKart2.webp",
+    "car_name": "Kart 125CC Shifter",
+    "car_src": "KartShifter.png"
+  },
+  {
+    "position": "1",
+    "classification": "1",
+    "date": "22/1/2026",
+    "circuit": "Londrina Kart 1",
+    "layout_src": "LondrinaKart1.webp",
+    "car_name": "Kart 125CC Shifter",
+    "car_src": "KartShifter.png"
+  }
+]

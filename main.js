@@ -1,13 +1,13 @@
 // Es el punto de entrada de la aplicacion
 // Es donde se llevan a cabo los procesos del servidor (Node.js)
-const { app, BrowserWindow, ipcMain } = require('electron/main')
+const { app, BrowserWindow, ipcMain, Menu } = require('electron/main')
 const path = require('node:path')
 const fs = require('node:fs/promises')
 
 const createWindow = () => {
   const window = new BrowserWindow({
-    width: 1920,
-    height: 1080,
+    width: 1080,
+    height: 720,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -15,6 +15,8 @@ const createWindow = () => {
 
   window.loadFile('index.html')
 }
+
+Menu.setApplicationMenu(null)
 
 app.whenReady().then(() => {
   createWindow()

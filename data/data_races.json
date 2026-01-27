@@ -6,8 +6,8 @@
       "layout_src": "Buskerud_Long.webp",
       "circuit_country": "Noruega",
       "circuit_length": "1531",
-      "classification": null,
-      "position": null
+      "classification": "1",
+      "position": "3"
     },
     {
       "number": "2",
@@ -15,8 +15,8 @@
       "layout_src": "InterlagosKart2.webp",
       "circuit_country": "Brasil",
       "circuit_length": "1120",
-      "classification": null,
-      "position": null
+      "classification": "1",
+      "position": "1"
     },
     {
       "number": "3",
@@ -24,8 +24,8 @@
       "layout_src": "LondrinaKart1.webp",
       "circuit_country": "Brasil",
       "circuit_length": "1002",
-      "classification": null,
-      "position": null
+      "classification": "1",
+      "position": "1"
     }
   ],
   "D-2": [
