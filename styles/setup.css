@@ -4,6 +4,8 @@
     grid-template-rows: 280px 280px 60px;
     gap: 16px;
     position: relative;
+    align-content: center;
+    justify-content: center;
 }
 
 .setup-config {
@@ -167,4 +169,30 @@
 .setup-info-button img {
     width: 42px;
     height: 42px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .setup {
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: 200px 200px 60px;
+        gap: 12px;
+    }
+
+    .setup-circuit-img {
+        width: 340px;
+        height: 180px;
+    }
+
+    .setup-layout-img img {
+        height: 180px;
+    }
+
+    .setup-car-img {
+        width: 260px;
+        height: 100px;
+    }
+
+    .setup-car-img img {
+        width: 260px;
+    }
 }

@@ -1,6 +1,6 @@
 // Aca se llevan a cabo los procesos del navegador/cliente
-import { createCardClass } from "./components/card_class.js";
-import { createCardCategory } from "./components/card_category.js";
+import { createCardClass, setLabelClass } from "./components/card_class.js";
+import { createCardCategory, setLabelCategory } from "./components/card_category.js";
 import { createCardRace, setLabelRace } from "./components/card_race.js";
 import { createAlert } from "./components/alert.js";
 
@@ -65,6 +65,23 @@ const checkCategoryCompletion = (char, catNumber) => {
     return podiums >= (totalRaces / 2.0);
 };
 
+const getCategoryLabel = (char, catNumber) => {
+    const races = appData.races[`${char}-${catNumber}`];
+    if (!races || races.length === 0) return false;
+    const totalRaces = races.length;
+    let podiums = 0;
+    let minpos = 0;
+    races.forEach(r => {
+        if (r.position && parseInt(r.position) <= 3) {
+            podiums++;
+            if (parseInt(r.position) > minpos) {
+                minpos = parseInt(r.position);
+            }
+        }
+    });
+    return [podiums >= (totalRaces / 2.0), minpos];
+};
+
 const checkClassCompletion = (char) => {
     const categories = appData.category[char];
     if (!categories || categories.length === 0) return false;
@@ -76,6 +93,24 @@ const checkClassCompletion = (char) => {
         }
     });
     return completedCategories >= (totalCategories / 2.0);
+};
+
+const getClassLabel = (char) => {
+    const categories = appData.category[char];
+    if (!categories || categories.length === 0) return false;
+    const totalCategories = categories.length;
+    let completedCategories = 0;
+    let minpos = 0;
+    categories.forEach(cat => {
+        let check = getCategoryLabel(char, cat.number)
+        if (check[0]) {
+            completedCategories++;
+            if (check[1] > minpos) {
+                minpos = check[1];
+            }
+        }
+    });
+    return [completedCategories >= (totalCategories / 2.0), minpos];
 };
 
 const isClassUnlocked = (char) => {
@@ -97,12 +132,15 @@ const renderClasses = () => {
     appData.class.forEach(cls => {
         const class_card = createCardClass(cls);
         const unlocked = appData.user.mode === 'Carrera' ? isClassUnlocked(cls.char) : true;
-
+        const label = getClassLabel(cls.char);
         if (unlocked) {
             class_card.classList.remove('disabled');
             class_card.addEventListener('click', () => openCategory(cls.char));
         } else {
             class_card.classList.add('disabled');
+        }
+        if (label[0]) {
+            setLabelClass(class_card, label[1]);
         }
         class_container.appendChild(class_card);
         const category_container = document.createElement("div");
@@ -113,6 +151,10 @@ const renderClasses = () => {
         const categories = appData.category[cls.char] || [];
         categories.forEach(cat => {
             const category_card = createCardCategory(cls.char, cat);
+            const label = getCategoryLabel(cls.char, cat.number);
+            if (label[0]) {
+                setLabelCategory(category_card, label[1]);
+            }
             category_card.addEventListener('click', () => openRace(cls.char, cat.number));
             category_container.appendChild(category_card);
 
@@ -352,9 +394,19 @@ const setupEventListeners = () => {
         appData.history.push(newEntry);
 
         if (!appData.races[id][number].position || parseInt(position) <= appData.races[id][number].position) {
+            const class_card_act = $(`#class-${currentSetup.char}`);
+            const category_card = $(`#category-${currentSetup.char}-${currentSetup.category_number}`);
             appData.races[id][number].classification = classification;
             appData.races[id][number].position = position;
             setLabelRace(race, position);
+            let labelCategory = getCategoryLabel(currentSetup.char, currentSetup.category_number);
+            let labelClass = getClassLabel(currentSetup.char);
+            if (labelCategory[0]) {
+                setLabelCategory(category_card, labelCategory[1]);
+                if (labelClass[0]) {
+                    setLabelClass(class_card_act, labelClass[1]);
+                }
+            }
 
             if (unlocked) {
                 const class_card = $(`#class-${nextClass}`);
@@ -612,8 +664,4 @@ function openSetup(char, category_number, race) {
 loadData();
 
 // RESPONSIBIDAD
-// MENUS DE ARRIBA
-// MODO HISTORIA
-// -> PULIR SISTEMA DE PUNTOS
-// -> AGREGAR BANDERAS A LAS CATEGORIAS Y CLASES
-// -> MEJORAR COMO SE COMPRUEBAN LAS CLASES BLOQUEADAS
+// Al entrar en una categoria recien desbloqueada el ir atras no funciona

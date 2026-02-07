@@ -25,5 +25,122 @@
     "layout_src": "LondrinaKart1.webp",
     "car_name": "Kart 125CC Shifter",
     "car_src": "KartShifter.png"
+  },
+  {
+    "position": "3",
+    "classification": "1",
+    "date": "7/2/2026",
+    "circuit": "Goiania Corto",
+    "layout_src": "GoianiaShort.webp",
+    "car_name": "Formula Inter MG-15",
+    "car_src": "F_Inter.png"
+  },
+  {
+    "position": "1",
+    "classification": "2",
+    "date": "7/2/2026",
+    "circuit": "Taruma Internacional",
+    "layout_src": "Taruma_Internacional.webp",
+    "car_name": "Formula Inter MG-15",
+    "car_src": "F_Inter.png"
+  },
+  {
+    "position": "2",
+    "classification": "1",
+    "date": "7/2/2026",
+    "circuit": "Jacarepagua 2005",
+    "layout_src": "Jacarepagua_2005.webp",
+    "car_name": "Formula Inter MG-15",
+    "car_src": "F_Inter.png"
+  },
+  {
+    "position": "3",
+    "classification": "1",
+    "date": "7/2/2026",
+    "circuit": "Curitiba Internacional",
+    "layout_src": "Curitiba_Internacional.webp",
+    "car_name": "Volkswagen Fusca",
+    "car_src": "CopaFusca.png"
+  },
+  {
+    "position": "1",
+    "classification": "3",
+    "date": "7/2/2026",
+    "circuit": "Goiania",
+    "layout_src": "GoianiaMixed.webp",
+    "car_name": "Volkswagen Fusca",
+    "car_src": "CopaFusca.png"
+  },
+  {
+    "position": "1",
+    "classification": "1",
+    "date": "7/2/2026",
+    "circuit": "Velopark 2017",
+    "layout_src": "Velopark_2017.webp",
+    "car_name": "Volkswagen Fusca",
+    "car_src": "CopaFusca.png"
+  },
+  {
+    "position": "2",
+    "classification": "1",
+    "date": "7/2/2026",
+    "circuit": "Curitiba Internacional",
+    "layout_src": "Curitiba_Internacional.webp",
+    "car_name": "Volkswagen Fusca",
+    "car_src": "CopaFusca.png"
+  },
+  {
+    "position": "1",
+    "classification": "1",
+    "date": "7/2/2026",
+    "circuit": "Curitiba Internacional",
+    "layout_src": "Curitiba_Internacional.webp",
+    "car_name": "Volkswagen Fusca",
+    "car_src": "CopaFusca.png"
+  },
+  {
+    "position": "2",
+    "classification": "1",
+    "date": "7/2/2026",
+    "circuit": "Goiania Corto",
+    "layout_src": "GoianiaShort.webp",
+    "car_name": "Formula Inter MG-15",
+    "car_src": "F_Inter.png"
+  },
+  {
+    "position": "1",
+    "classification": "1",
+    "date": "7/2/2026",
+    "circuit": "Goiania Corto",
+    "layout_src": "GoianiaShort.webp",
+    "car_name": "Formula Inter MG-15",
+    "car_src": "F_Inter.png"
+  },
+  {
+    "position": "1",
+    "classification": "1",
+    "date": "7/2/2026",
+    "circuit": "Jacarepagua 2005",
+    "layout_src": "Jacarepagua_2005.webp",
+    "car_name": "Formula Inter MG-15",
+    "car_src": "F_Inter.png"
+  },
+  {
+    "position": "2",
+    "classification": "1",
+    "date": "7/2/2026",
+    "circuit": "Buskerud Largo",
+    "layout_src": "Buskerud_Long.webp",
+    "car_name": "Kart 125CC Shifter",
+    "car_src": "KartShifter.png"
+  },
+  {
+    "position": "1",
+    "classification": "1",
+    "date": "7/2/2026",
+    "circuit": "Buskerud Largo",
+    "layout_src": "Buskerud_Long.webp",
+    "car_name": "Kart 125CC Shifter",
+    "car_src": "KartShifter.png"
   }
 ]
