@@ -6,8 +6,8 @@ const fs = require('node:fs/promises')
 
 const createWindow = () => {
   const window = new BrowserWindow({
-    width: 1080,
-    height: 720,
+    width: 1920,
+    height: 1080,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
