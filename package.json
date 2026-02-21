@@ -1,46 +1,49 @@
 {
   "name": "atm2-carrer-mode",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "./main.js",
   "scripts": {
     "dev": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "app:dir": "electron-builder --dir",
-    "app:dist": "electron-builder"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder -wl"
   },
   "build": {
-    "win": {
-      "target": [
+    "appId": "com.fnavarro.atm2-carrer-mode",
+    "asar": true,
+    "dmg": {
+      "contents": [
         {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
         }
       ]
     },
-    "mac": {
+    "linux": {
       "target": [
-        {
-          "target": "dmg",
-          "arch": [
-            "universal"
-          ]
-        }
+        "AppImage",
+        "deb"
       ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
     }
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "Franco Navarro",
+  "license": "MIT",
+  "description": "Automobilista 2 Career Mode",
   "type": "commonjs",
   "devDependencies": {
+    "electron-builder": "^26.8.1",
     "electron": "^37.2.4"
   },
   "dependencies": {
-    "electron-builder": "^26.8.1",
     "electron-settings": "^4.0.4",
     "electron-store": "^10.1.0"
   }

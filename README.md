@@ -45,9 +45,14 @@ npm run dev
 
 ### Building for Distribution
 
-To package the application for Windows or macOS:
+To package the application (Windows and Linux):
 ```bash
-npm run app:dist
+npm run dist
+```
+
+To create a directory with the unpacked executable:
+```bash
+npm run pack
 ```
 
 ## 🛠️ Built With
@@ -55,7 +60,8 @@ npm run app:dist
 - **[Electron](https://www.electronjs.org/)**: Framework for building cross-platform desktop apps.
 - **HTML5 & CSS3**: For structure and modern UI design.
 - **Vanilla JavaScript**: Core application logic.
-- **[Electron-Store](https://github.com/sindresorhus/electron-store)**: For local data persistence.
+- **[Electron-Store](https://github.com/sindresorhus/electron-store)**: For persistent local data storage.
+- **[Electron-Settings](https://github.com/nathanbuchar/electron-settings)**: For managing application settings.
 
 ## 📁 Project Structure
 
@@ -65,10 +71,11 @@ npm run app:dist
 - `styles/`: CSS stylesheets for different application screens.
 - `main.js`: Main process Electron script.
 - `renderer.js`: Renderer process handling UI and app logic.
+- `preload.js`: Script for exposing APIs to the renderer process.
 
 ## 📝 License
 
-This project is licensed under the ISC License - see the `package.json` file for details.
+This project is licensed under the MIT License - see the `package.json` file for details.
 
 ---
 *Created by [Franco Navarro](https://github.com/Franco-Navarro)*
